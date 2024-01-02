@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>View Repo</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
@@ -91,66 +91,94 @@
 
     {{-- Section Top Start --}}
     
-    <div class="container mt-36 mb-20">
+    <div class="container mt-48 mb-20">
         <div>
-            
-            <div class="px-4 pt-16 text-center items-center md:pt-24">
-                <p class="font-bold text-white text-xl md:text-2xl mb-5">PERPUSTAKAAN DIGITAL</p>
-                <p class="font-bold text-white  text-md md:text-xl mb-1">Tugas Akhir</p>
-                <p class="mb-2 text-white ">Karya Tulis Ilmiah, Panduan, serta referensi</p>
-            </div>
-            <form class="mx-20">   
-                <label for="default-search" class="mb-2 mx-10 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                <div class="relative">
-                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                        </svg>
+            <section id="view" class="mb-32">
+                <div class="container mx-12">
+                  <div class="flex flex-wrap">
+                    <div class="w-full lg:w-2/3 px-4 mb-10 bg-white rounded-2xl">
+                        <div class="flex">
+                            <div>
+                                <h4 class="text-blue-400 uppercase font-bold mb-3 text-md mt-5 ">
+                                    FACTORS INFLUENCING OFFICE ACCEPTANCE TOWARDS SMART HOME TECHNOLOGY
+                                </h4>
+                            </div>
+                            <div class="items-center justify-items-end mt-5 ml-52">
+                                <a href="#" class="bg-red-400 hover:bg-red-500 text-white text-sm rounded-full px-2 py-1 shadow-lg">Tugas Akhir</a>
+                            </div>
+                        </div>
+                      <div class="flex">
+                          <h2 class="text-slate-400 text-dark font-normal text-3xl mb-5 mr-4 max-w-md lg:text-sm">
+                            <i class="fa-solid fa-user"></i>
+                            Nabila Azzahra [202002084]
+                          </h2>
+                          <h2 class="text-slate-400 font-normal text-3xl mb-5 mr-6 max-w-md lg:text-sm">
+                            <i class="fa-solid fa-user-tie"></i>
+                            Sopyan Sauri, S.Kom
+                          </h2>
+                          <h2 class="text-red-600 font-bold text-3xl mb-5 max-w-md lg:text-sm">
+                            2023
+                          </h2>
+                      </div>
                     </div>
-                    <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-secondary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required>
-                    <button type="submit" class="text-slate-900 absolute end-2.5 bottom-2.5 bg-white hover:bg-slate-200 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2">
-                        Cari</button>
-                </div>
-            </form>
-            <div class="w-full px-4 pt-5 mb-16">
-                <div class="flex flex-wrap text-center text-white  items-center justify-center">
-                    <p class="mr-8">Tugas Akhir : 233</p>
-                    <p class="mr-8">Laporan KKN : 233</p>
-                    <p class="mr-8">Laporan KKI : 233</p>
-                    <p>Laporan PKM : 233 </p>
-                </div>
-            </div>
+          
+                    <div class="max-w-lg lg:w-1/3 mx-auto items-center">
+                      <h3
+                        class="font-semibold text-white text-2xl mb-4 lg:text-2xl text-center">
+                        Jenis Koleksi
+                      </h3>
+                      <div class="max-w-lg mx-auto justify-center items-center ml-32">
+                        <div class="w-64 text-white flex text-lg justify-center items-center bg-red-400 rounded-lg px-1 py-3 shadow-lg  mb-3">
+                          <i class="fa-solid fa-file-lines"></i>
+                          <p class="ml-3">
+                            Tugas Akhir
+                          </p>
+                        </div>
+                        <div class="w-64 text-white flex text-lg justify-center items-center bg-red-400 rounded-lg px-1 py-3 shadow-lg  mb-3">
+                          <i class="fa-solid fa-file-lines"></i>
+                          <p class="ml-3">
+                            Laporan KKN
+                          </p>
+                        </div>
+                        <div class="w-64 text-white flex text-lg justify-center items-center bg-red-400 rounded-lg px-1 py-3 shadow-lg mb-3">
+                          <i class="fa-solid fa-file-lines"></i>
+                          <p class="ml-3">
+                            Laporan KKI
+                          </p>
+                        </div>
+                        <div class="w-64 text-white flex text-lg justify-center items-center bg-red-400 rounded-lg px-1 py-3 shadow-lg mb-16">
+                          <i class="fa-solid fa-file-lines"></i>
+                          <p class="ml-3">
+                            Laporan PKM
+                          </p>
+                        </div>
 
-            <div class="text-center mb-8 text-white ">
-                <p class="font-bold text-xl">Prodi</p>
-                <p class="text-md font-light">Berikut ini adalah kategori dari Program Studi.</p>
-            </div>
+                        <h3
+                        class="font-semibold text-white text-2xl mb-9 lg:text-2xl ml-6">
+                        Progaram Studi
+                      </h3>
+                      <div class="">
+                        <div class="w-64 text-white text-lg justify-center items-center bg-white rounded-lg px-1 py-3 shadow-lg  mb-3">
+                          <div class="bg-primary h-[252px] w-[230px] rounded-lg shadow-md relative mx-auto mb-5">
+                            <img src="{{asset('img/Rounded.png')}}" alt="" class="ml-10">
+                            <div class="absolute text-xl top-24 z-10 text-center font-semibold  justify-center">
+                                Manajemen Pemasaran
+                            </div>
+                          </div>
 
-            <div class="container mx-auto px-10 font-inter sm:flex sm:flex-wrap sm:gap-6 sm:justify-evenly text-center">
-                <div class="rounded-md shadow-lg bg-white overflow-hidden sm:mb-0 mb-10 sm:w-64 md:w-80 lg:w-96">
-                    <img src="https://source.unsplash.com/600x400" alt="Image Caption" class="w-full">
-                    <div class="px-6 py-4">
-                        <div class="font-semibold text-md mb-2 text-slate-700">Manajemen Pemasaran</div>
-                        <p class="text-sm text-slate-600">Kampus Tasikmalaya</p>
+                          <div class="bg-[#ECF0D1] h-[252px] w-[230px] rounded-lg shadow-md relative mx-auto">
+                            <img src="{{asset('img/Rounded2.png')}}" alt="" class="ml-[60px]">
+                            <div class="absolute text-xl top-24 z-10 text-black font-semibold text-center items-center justify-center">
+                                Manajemen Keuangan Perbankan
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
                     </div>
+                  </div>
                 </div>
-
-                <div class="rounded-md shadow-lg bg-white overflow-hidden sm:mb-0 mb-10 sm:w-64 md:w-80 lg:w-96">
-                    <img src="https://source.unsplash.com/600x400" alt="Image Caption" class="w-full">
-                    <div class="px-6 py-4">
-                        <div class="font-semibold text-md mb-2 text-slate-700">Manajemen Keuangan Perbankan</div>
-                        <p class="text-sm text-slate-600">Kampus Tasikmalaya</p>
-                    </div>
-                </div>
-
-                <div class="rounded-md shadow-lg bg-white overflow-hidden sm:mb-0 mb-10 sm:w-64 md:w-80 lg:w-96">
-                    <img src="https://source.unsplash.com/600x400" alt="Image Caption" class="w-full">
-                    <div class="px-6 py-4">
-                        <div class="font-semibold text-md mb-2 text-slate-700">Manajemen Informatika</div>
-                        <p class="text-sm text-slate-600">Kampus Tasikmalaya</p>
-                    </div>
-                </div>
-            </div>
+              </section>
         </div>
     </div>
     {{-- Section Top End --}}

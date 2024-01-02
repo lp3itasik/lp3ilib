@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Pelayanan</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
 </head>
 
 <body class="mx-auto max-w-screen bg-center bg-[url('/img/gedung.png')] bg-slate-900 h-screen">
-    {{-- Section Navbar Start --}}
+     {{-- Section Navbar Start --}}
 <nav class="bg-primary dark:bg-gray-900 py-3 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
     <div class="bg-[#ECAE30] w-full py-5 -mt-6 ">
     </div>
@@ -33,12 +33,12 @@
             </a>
         </div>
         
-      <button onclick="hamburgerMenu()"  type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-slate-200 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+    <button onclick="hamburgerMenu()"  type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-slate-200 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
         </svg>
-        </button>
+    </button>
     </div>
     <div class="items-center justify-between hidden w-full ml-8 md:flex md:w-auto md:order-1" id="navbarHamburger">
       <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium ml-44 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:ml-0">
@@ -90,79 +90,139 @@
 
 
     {{-- Section Top Start --}}
-    
-    <div class="container mt-36 mb-20">
-        <div>
-            
-            <div class="px-4 pt-16 text-center items-center md:pt-24">
-                <p class="font-bold text-white text-xl md:text-2xl mb-5">PERPUSTAKAAN DIGITAL</p>
-                <p class="font-bold text-white  text-md md:text-xl mb-1">Tugas Akhir</p>
-                <p class="mb-2 text-white ">Karya Tulis Ilmiah, Panduan, serta referensi</p>
-            </div>
-            <form class="mx-20">   
-                <label for="default-search" class="mb-2 mx-10 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                <div class="relative">
-                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                        </svg>
-                    </div>
-                    <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-secondary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required>
-                    <button type="submit" class="text-slate-900 absolute end-2.5 bottom-2.5 bg-white hover:bg-slate-200 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2">
-                        Cari</button>
-                </div>
-            </form>
-            <div class="w-full px-4 pt-5 mb-16">
-                <div class="flex flex-wrap text-center text-white  items-center justify-center">
-                    <p class="mr-8">Tugas Akhir : 233</p>
-                    <p class="mr-8">Laporan KKN : 233</p>
-                    <p class="mr-8">Laporan KKI : 233</p>
-                    <p>Laporan PKM : 233 </p>
-                </div>
-            </div>
 
+    <div class="container mx-auto mt-36 mb-20">
+            <div class="px-4 pt-16 text-center items-center md:pt-10">
+                <p class="font-bold text-white text-xl md:text-2xl mb-12">PEMINJAMAN</p>
+                <p class="mb-1 text-white ">Perpusatakaan Politeknik LP3I Kampus Tasikmalaya memiliki:</p>
+                <div class="w-full px-4 pt-5 mb-16">
+                    <div class="flex flex-wrap text-center text-white font-light items-center justify-center">
+                        <p class="mr-8">Buku Fiksi : 100000</p>
+                        <p class="mr-8">Buku Non-Fiksi : 100000</p>
+                        <p class="mr-8">Buku Keilmuan : 100000</p>
+                        <p>Buku Religi : 100000</p>
+                    </div>
+                </div>
+            </div>
             <div class="text-center mb-8 text-white ">
-                <p class="font-bold text-xl">Prodi</p>
-                <p class="text-md font-light">Berikut ini adalah kategori dari Program Studi.</p>
+                <p class="font-bold text-xl mb-2">Alur Peminjaman</p>
+                <p class="text-md font-light">Berikut ini adalah alur peminjaman gan!</p>
             </div>
 
-            <div class="container mx-auto px-10 font-inter sm:flex sm:flex-wrap sm:gap-6 sm:justify-evenly text-center">
-                <div class="rounded-md shadow-lg bg-white overflow-hidden sm:mb-0 mb-10 sm:w-64 md:w-80 lg:w-96">
-                    <img src="https://source.unsplash.com/600x400" alt="Image Caption" class="w-full">
-                    <div class="px-6 py-4">
-                        <div class="font-semibold text-md mb-2 text-slate-700">Manajemen Pemasaran</div>
-                        <p class="text-sm text-slate-600">Kampus Tasikmalaya</p>
+            <div class="container mx-auto px-10 grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="flex justify-end items-end">
+                    <div class="w-1/3 p-2 rounded-xl">
+                        <img src="{{ asset('img/1.png') }}" alt="Image Caption" width="100%" class="ronded-xl shadow-xl">
+                    </div>
+                    <div class="w-2/3 p-2">
+                        <div class="py-10 w-80 rounded-md shadow-lg bg-primary flex flex-col justify-end relative justify-items-center items-center">
+                            <div class="w-10 h-10 bg-[#F15C67] rounded-full flex absolute -top-5 -right-5 animate-bounce">
+                                <span class="text-2xl m-auto text-white">1</span>
+                            </div>
+                            <p
+                                class="text-white group-hover:text-white selection:bg-lime-300 selection:text-slate-900 md:text-md px-4 hover:block">
+                                Pemustaka datang ke perpustakaan LP3I Tasikmalaya untuk membaca dan belajar.</p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="rounded-md shadow-lg bg-white overflow-hidden sm:mb-0 mb-10 sm:w-64 md:w-80 lg:w-96">
-                    <img src="https://source.unsplash.com/600x400" alt="Image Caption" class="w-full">
-                    <div class="px-6 py-4">
-                        <div class="font-semibold text-md mb-2 text-slate-700">Manajemen Keuangan Perbankan</div>
-                        <p class="text-sm text-slate-600">Kampus Tasikmalaya</p>
+                <div class="flex justify-end items-end">
+                    <div class="w-1/3 p-2 rounded-xl">
+                        <img src="{{ asset('img/2.png') }}" alt="Image Caption" width="100%" class="ronded-xl shadow-xl">
+                    </div>
+                    <div class="w-2/3 p-2">
+                        <div class="py-10 w-80 rounded-md shadow-lg bg-primary flex flex-col justify-end relative justify-items-center items-center">
+                            <div class="w-10 h-10 bg-[#F15C67] rounded-full flex absolute -top-5 -right-5 animate-bounce">
+                                <span class="text-2xl m-auto text-white">2</span>
+                            </div>
+                            <p
+                                class="text-white group-hover:text-white selection:bg-lime-300 selection:text-slate-900 md:text-md px-4 hover:block">Pengguna melakukan pencarian buku menggunakan komputer OPAC di perpustakaan kampus.</p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="rounded-md shadow-lg bg-white overflow-hidden sm:mb-0 mb-10 sm:w-64 md:w-80 lg:w-96">
-                    <img src="https://source.unsplash.com/600x400" alt="Image Caption" class="w-full">
-                    <div class="px-6 py-4">
-                        <div class="font-semibold text-md mb-2 text-slate-700">Manajemen Informatika</div>
-                        <p class="text-sm text-slate-600">Kampus Tasikmalaya</p>
+                <div class="flex justify-end items-end">
+                    <div class="w-1/3 p-2 rounded-xl">
+                        <img src="{{ asset('img/3.png') }}" alt="Image Caption" width="100%" class="ronded-xl shadow-xl">
+                    </div>
+                    <div class="w-2/3 p-2">
+                        <div class="py-10 w-80 rounded-md shadow-lg bg-primary flex flex-col justify-end relative justify-items-center items-center">
+                            <div class="w-10 h-10 bg-[#F15C67] rounded-full flex absolute -top-5 -right-5 animate-bounce">
+                                <span class="text-2xl m-auto text-white">3</span>
+                            </div>
+                            <p
+                                class="text-white group-hover:text-white selection:bg-lime-300 selection:text-slate-900 md:text-md px-4 hover:block">Pengguna bawa buku, KTA, ingin meminjam di perpustakaan LP3I Tasikmalaya.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-end items-end">
+                    <div class="w-1/3 p-2 rounded-xl">
+                        <img src="{{ asset('img/4.png') }}" alt="Image Caption" width="100%" class="ronded-xl shadow-xl">
+                    </div>
+                    <div class="w-2/3 p-2">
+                        <div class="py-10 w-80 rounded-md shadow-lg bg-primary flex flex-col justify-end relative justify-items-center items-center">
+                            <div class="w-10 h-10 bg-[#F15C67] rounded-full flex absolute -top-5 -right-5 animate-bounce">
+                                <span class="text-2xl m-auto text-white">4</span>
+                            </div>
+                            <p
+                                class="text-white group-hover:text-white selection:bg-lime-300 selection:text-slate-900 md:text-md px-4 hover:block">Pengguna mencari buku di rak dengan memanfaatkan mesin pencarian yang tersedia.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-end items-end">
+                    <div class="w-1/3 p-2 rounded-xl">
+                        <img src="{{ asset('img/5.png') }}" alt="Image Caption" width="100%" class="ronded-xl shadow-xl">
+                    </div>
+                    <div class="w-2/3 p-2">
+                        <div class="py-10 w-80 rounded-md shadow-lg bg-primary flex flex-col justify-end relative justify-items-center items-center">
+                            <div class="w-10 h-10 bg-[#F15C67] rounded-full flex absolute -top-5 -right-5 animate-bounce">
+                                <span class="text-2xl m-auto text-white">5</span>
+                            </div>
+                            <p
+                                class="text-white group-hover:text-white selection:bg-lime-300 selection:text-slate-900 md:text-md px-4 hover:block">Petugas perpustakaan sirkulasi buku, data peminjaman pengguna dilakukan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-end items-end">
+                    <div class="w-1/3 p-2 rounded-xl">
+                        <img src="{{ asset('img/6.png') }}" alt="Image Caption" width="100%" class="ronded-xl shadow-xl">
+                    </div>
+                    <div class="w-2/3 p-2">
+                        <div class="py-10 w-80 rounded-md shadow-lg bg-primary flex flex-col justify-end relative justify-items-center items-center">
+                            <div class="w-10 h-10 bg-[#F15C67] rounded-full flex absolute -top-5 -right-5 animate-bounce">
+                                <span class="text-2xl m-auto text-white">6</span>
+                            </div>
+                            <p
+                                class="text-white group-hover:text-white selection:bg-lime-300 selection:text-slate-900 md:text-md px-4 hover:block">Buku sudah dapat dipinjam di perpustakaan, manfaatkan kesempatan ini sekarang juga.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+            <div class="text-center mb-8 text-white mt-16">
+                <p class="font-bold text-xl mb-2">Pengajuan Pengadaan Buku</p>
+                <p class="text-md font-light">Berikut ini adalah menu untuk pengadaan buku.</p>
+            </div>
+
+            <div class="container mx-auto px-6 sm:flex sm:flex-wrap sm:gap-6 sm:justify-evenly">
+                <div>
+                    <input type="text" id="judul_buku" class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block h-12 w-[550px] p-2.5" placeholder="Tulis judul buku disini..." required>
+                </div>
+                <div>
+                    <input type="text" id="pengarang" class="-ml-8 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block h-12 w-[650px] p-2.5" placeholder="Tulis Nama Pengarang disini..." required>
+                </div>
+                <button type="button" class="-ml-8 text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-full text-sm px-9 py-2.5 text-center inline-flex items-center">
+                    Ajukan
+                    <i class="fa-solid fa-circle-up ml-3"></i>
+                </button>
+            </div>
     </div>
     {{-- Section Top End --}}
 
-    
+
 
     {{-- Section Footer Start --}}
-    <section class="bg-primary pt-16 pb-12">
-        <div class="bg-[#ECAE30] w-full py-5 -mt-16">
-        </div>
+    <section class="bg-primary pt-16 pb-12 px-5">
         <div class="container">
-            <div class="flex flex-wrap items-center justify-center mb-8 mt-6">
+            <div class="flex flex-wrap items-center justify-center mb-8">
                 <img src="{{ asset('img/logolp3i.png') }}" alt="logo lp3i" width="200px" class="mx-4 mb-5">
                 <img src="{{ asset('img/taglinelp3i.png') }}" alt="tagline lp3i" width="160px" class="mx-4">
             </div>
@@ -223,11 +283,12 @@
                         </svg>
                     </a>
 
-                    <p class="text-white text-center text-md mr-4 hidden md:block">Politeknik LP3I Kampus Tasikmalaya</p>
+                    <p class="text-white text-center text-md mr-4 hidden md:block">Politeknik LP3I Kampus Tasikmalaya
+                    </p>
 
                 </div>
             </div>
-            </div>
+        </div>
         </div>
     </section>
     {{-- Section Footer End --}}
@@ -237,9 +298,9 @@
         const dropdownDigital = () => {
             let content = document.getElementById('digitalNavbar');
             let nonactive = content.classList.contains('hidden');
-            if(nonactive){
+            if (nonactive) {
                 content.classList.remove('hidden');
-            }else{
+            } else {
                 content.classList.add('hidden');
             }
         }
@@ -247,9 +308,9 @@
         const hamburgerMenu = () => {
             let content = document.getElementById('navbarHamburger');
             let nonactive = content.classList.contains('hidden');
-            if(nonactive){
+            if (nonactive) {
                 content.classList.remove('hidden');
-            }else{
+            } else {
                 content.classList.add('hidden');
             }
         }

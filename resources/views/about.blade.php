@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Tentang Kami</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
@@ -91,78 +91,46 @@
 
     {{-- Section Top Start --}}
     
-    <div class="container mt-36 mb-20">
+    <div class="container mt-36 mb-20 mx-4">
         <div>
-            
-            <div class="px-4 pt-16 text-center items-center md:pt-24">
-                <p class="font-bold text-white text-xl md:text-2xl mb-5">PERPUSTAKAAN DIGITAL</p>
-                <p class="font-bold text-white  text-md md:text-xl mb-1">Tugas Akhir</p>
-                <p class="mb-2 text-white ">Karya Tulis Ilmiah, Panduan, serta referensi</p>
+            <div class="px-4 pt-16 text-center items-center md:pt-10">
+                <p class="font-bold text-white text-xl md:text-2xl mb-5">Jam Pelayanan</p>
             </div>
-            <form class="mx-20">   
-                <label for="default-search" class="mb-2 mx-10 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                <div class="relative">
-                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                        </svg>
-                    </div>
-                    <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-secondary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required>
-                    <button type="submit" class="text-slate-900 absolute end-2.5 bottom-2.5 bg-white hover:bg-slate-200 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2">
-                        Cari</button>
-                </div>
-            </form>
             <div class="w-full px-4 pt-5 mb-16">
-                <div class="flex flex-wrap text-center text-white  items-center justify-center">
-                    <p class="mr-8">Tugas Akhir : 233</p>
-                    <p class="mr-8">Laporan KKN : 233</p>
-                    <p class="mr-8">Laporan KKI : 233</p>
-                    <p>Laporan PKM : 233 </p>
+                <div class="flex flex-wrap text-white  text-center items-center justify-center">
+                    <p class="mr-8">Nindy bla bla bla</p>
+                    <p class="mr-8">12 Desember 2023</p>
+                </div>
+            </div>
+            <div>
+                <div class=" flex border mt-10 mb-16 max-w-lg border-slate-200 rounded-xl mx-auto p-5 shadow-md hover:bg-primary group overflow-hidden relative hover:scale-95 transition-all duration-500">
+                    <p class="text-white  font-bold group-hover:text-white selection:bg-lime-300 selection:text-slate-900 mr-52">Senin-Jum’at</p>
+                    <p class="text-white  font-bold group-hover:text-white selection:bg-lime-300 selection:text-slate-900 ">08.00 - 16.00 WIB</p>
                 </div>
             </div>
 
-            <div class="text-center mb-8 text-white ">
-                <p class="font-bold text-xl">Prodi</p>
-                <p class="text-md font-light">Berikut ini adalah kategori dari Program Studi.</p>
+            <div>
+                <div class=" flex border my-10 max-w-lg border-slate-200 rounded-xl mx-auto p-5 shadow-md hover:bg-primary group overflow-hidden relative hover:scale-95 transition-all duration-500">
+                    <p class="text-white  font-bold group-hover:text-white selection:bg-lime-300 selection:text-slate-900 mr-[275px]">Sabtu</p>
+                    <p class="text-white  font-bold group-hover:text-white selection:bg-lime-300 selection:text-slate-900 ">08.00 - 13.30 WIB</p>
+                </div>
             </div>
 
-            <div class="container mx-auto px-10 font-inter sm:flex sm:flex-wrap sm:gap-6 sm:justify-evenly text-center">
-                <div class="rounded-md shadow-lg bg-white overflow-hidden sm:mb-0 mb-10 sm:w-64 md:w-80 lg:w-96">
-                    <img src="https://source.unsplash.com/600x400" alt="Image Caption" class="w-full">
-                    <div class="px-6 py-4">
-                        <div class="font-semibold text-md mb-2 text-slate-700">Manajemen Pemasaran</div>
-                        <p class="text-sm text-slate-600">Kampus Tasikmalaya</p>
-                    </div>
-                </div>
-
-                <div class="rounded-md shadow-lg bg-white overflow-hidden sm:mb-0 mb-10 sm:w-64 md:w-80 lg:w-96">
-                    <img src="https://source.unsplash.com/600x400" alt="Image Caption" class="w-full">
-                    <div class="px-6 py-4">
-                        <div class="font-semibold text-md mb-2 text-slate-700">Manajemen Keuangan Perbankan</div>
-                        <p class="text-sm text-slate-600">Kampus Tasikmalaya</p>
-                    </div>
-                </div>
-
-                <div class="rounded-md shadow-lg bg-white overflow-hidden sm:mb-0 mb-10 sm:w-64 md:w-80 lg:w-96">
-                    <img src="https://source.unsplash.com/600x400" alt="Image Caption" class="w-full">
-                    <div class="px-6 py-4">
-                        <div class="font-semibold text-md mb-2 text-slate-700">Manajemen Informatika</div>
-                        <p class="text-sm text-slate-600">Kampus Tasikmalaya</p>
-                    </div>
+            <div>
+                <div class="px-4 pt-16 text-center items-center md:pt-10">
+                    <p class="font-bold text-white text-xl md:text-2xl mb-5">Fasilitas erpustakaan</p>
                 </div>
             </div>
         </div>
     </div>
-    {{-- Section Top End --}}
+{{-- Section Top End --}}
 
     
 
     {{-- Section Footer Start --}}
-    <section class="bg-primary pt-16 pb-12">
-        <div class="bg-[#ECAE30] w-full py-5 -mt-16">
-        </div>
+    <section class="bg-primary pt-16 pb-12 px-5">
         <div class="container">
-            <div class="flex flex-wrap items-center justify-center mb-8 mt-6">
+            <div class="flex flex-wrap items-center justify-center mb-8">
                 <img src="{{ asset('img/logolp3i.png') }}" alt="logo lp3i" width="200px" class="mx-4 mb-5">
                 <img src="{{ asset('img/taglinelp3i.png') }}" alt="tagline lp3i" width="160px" class="mx-4">
             </div>
