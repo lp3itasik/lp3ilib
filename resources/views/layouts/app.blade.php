@@ -31,7 +31,7 @@
 
     <!-- Include Quill library -->
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-    
+
 
 
     <!-- Scripts -->
@@ -43,8 +43,9 @@
         }
 
         body {
-            font-family: 'Roboto Mono', monospace;
-            font-family: 'Source Code Pro', monospace;
+            font-family: 'Poppins', sans-serif;
+            /* font-family: 'Roboto Mono', monospace; */
+            /* font-family: 'Source Code Pro', monospace; */
         }
 
         td,
@@ -78,6 +79,7 @@
             margin: 5px !important;
             border-radius: 10px !important;
         }
+
         /* .js-example-placeholder-single {
             height: 1000px;
         } */
@@ -103,7 +105,7 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
         // In your Javascript (external .js resource or <script> tag)
-            $(".js-example-placeholder-single").select2({
+        $(".js-example-placeholder-single").select2({
             placeholder: "Pilih Type ...",
             allowClear: true
         });
