@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Backend\DesideratasController;
+use App\Http\Controllers\Backend\RepositoriesController;
+use App\Http\Controllers\Backend\TypeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +19,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+Route::resource('/types', TypeController::class)->middleware(['auth']);
+Route::resource('/repositories', RepositoriesController::class)->middleware(['auth']);
+Route::resource('/desideratas', DesideratasController::class)->middleware(['auth']);
+
+require __DIR__.'/auth.php';
