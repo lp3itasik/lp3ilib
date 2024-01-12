@@ -9,16 +9,39 @@
 
 
     <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse ">
-        <div class="flex">
-            <a href="#" target="_blank"
-                    class="w-7 h-7 rounded-full mr-9 justify-center items-center text-white hover:text-slate-300 hidden md:block">
-                    <i class="fa-solid fa-right-from-bracket fa-2x"></i>
-            </a>
-            <a href="#" target="_blank"
+        {{-- <div class="flex">
+                <a href="#" target="_blank"
                         class="w-7 h-7 rounded-full mr-9 justify-center items-center text-white hover:text-slate-300 hidden md:block">
-                        <i class="fa-solid fa-circle-user fa-2x"></i>
-            </a>
-        </div>
+                        <i class="fa-solid fa-right-from-bracket fa-2x"></i>
+                </a>
+                <a href="#" target="_blank"
+                            class="w-7 h-7 rounded-full mr-9 justify-center items-center text-white hover:text-slate-300 hidden md:block">
+                            <i class="fa-solid fa-circle-user fa-2x"></i>
+                </a>
+            </div> --}}
+
+        @if (Route::has('login'))
+                        <div class="flex items-center gap-2">
+                            @auth
+                                <a href="{{ route('welcome.index') }}"
+                                    class="border bg-secondary border-gray-200 hover:bg-blue-900 hidden md:block px-3 py-1 mr-4 rounded-xl font-medium text-sm text-white space-x-1">
+                                    <i class="fa-solid fa-circle-user"></i>
+                                    <span>{{ Auth::user()->name }}</span>
+                                </a>
+                              <form method="POST" action="{{ route('logout') }}" class="mr-9 border bg-red-500 border-gray-200 hover:bg-red-600 hidden md:block px-3 py-1 rounded-xl font-medium text-sm text-white space-x-1">
+                                  @csrf
+                                  <button :href="route('logout')"
+                                      onclick="event.preventDefault(); this.closest('form').submit();">
+                                      {{ __('Keluar') }}
+                                  </b>
+                              </form>
+                            @else
+                                <a href="{{ route('login') }}" class="rounded-lg text-white mr-9 hidden md:block">
+                                    <i class="fa-solid fa-right-to-bracket fa-1x "></i>
+                                </a>
+                            @endauth
+                        </div>
+                    @endif
         
       <button onclick="hamburgerMenu()"  type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-slate-200 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
@@ -50,7 +73,7 @@
                     </li>
                   </ul>
               </div>
-      </li>
+        </li>
       <li>
         <li>
             <button onclick="dropdownDigital()" class="flex relative items-center justify-between w-full py-2 px-3 mx-6 text-white rounded md:hover:bg-transparent md:border-0 md:hover:text-[#ECAE30] md:p-0 md:w-auto">Digital <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -77,11 +100,35 @@
         <li>
           <a href="{{ route('arsip.index') }}" class="block py-2 px-3 mx-6 text-white rounded md:hover:bg-transparent md:hover:text-[#ECAE30] md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Arsip</a>
         </li>  
-        <li>
+        {{-- <li>
             <a href="#" class="block py-2 px-3 mx-6 text-white rounded md:hidden md:hover:bg-transparent md:hover:text-[#ECAE30] md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Profile</a>
-          </li>
+        </li>
         <li>
         <a href="#" class="block py-2 px-3 mx-6 text-white rounded md:hidden md:hover:bg-transparent md:hover:text-[#ECAE30] md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Logout</a>
+        </li> --}}
+        <li>
+          @if (Route::has('login'))
+              <div class="flex flex-row items-center justify-center gap-2">
+                  @auth
+                      <a href="{{ route('welcome.index') }}"
+                          class="border bg-secondary border-gray-200 hover:bg-blue-900 md:hidden px-3 py-1 ml-9 rounded-lg font-medium text-sm text-white space-x-1">
+                          <i class="fa-solid fa-circle-user"></i>
+                          <span>{{ Auth::user()->name }}</span>
+                      </a>
+                      <form method="POST" action="{{ route('logout') }}" class="mr-9 border  bg-red-500 border-gray-200 hover:bg-red-600 md:hidden px-3 py-1 rounded-xl font-medium text-sm text-white space-x-1">
+                          @csrf
+                          <button :href="route('logout')"
+                              onclick="event.preventDefault(); this.closest('form').submit();">
+                              {{ __('Keluar') }}
+                          </b>
+                      </form>
+                  @else
+                      <a href="{{ route('login') }}" class="rounded-lg text-white  md:hidden">
+                          <i class="fa-solid fa-right-to-bracket fa-1x "></i>
+                      </a>
+                  @endauth
+              </div>
+          @endif
         </li>
       </ul>
     </div>

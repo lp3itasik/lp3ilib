@@ -16,7 +16,7 @@
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
-    <body>
+    <body class="mx-auto max-w-screen bg-center bg-no-repeat bg-[url('../img/pattern.svg')] bg-cover">
         <div class="font-sans text-gray-900 antialiased">
             {{ $slot }}
         </div>
