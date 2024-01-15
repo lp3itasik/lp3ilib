@@ -171,7 +171,7 @@
     {{-- Section Footer End --}}
 
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="{{asset('js/lottie-player.js')}}"></script>
     <script>
         const dropdownDigital = () => {
             let content = document.getElementById('digitalNavbar');
