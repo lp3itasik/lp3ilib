@@ -43,13 +43,15 @@
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
+                        {{ __('Lupa Password ?') }}
                     </a>
                 @endif
 
                 <x-button class="ml-3">
                     {{ __('Log in') }}
                 </x-button>
+                
+                <a href="{{route('register')}}" class="rounded-lg text-base font-medium ml-2 px-3 py-1.5 text-white bg-secondary hover:bg-blue-800">Register</a>
             </div>
         </form>
     </x-auth-card>

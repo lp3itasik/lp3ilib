@@ -17,6 +17,7 @@ use App\Http\Controllers\PustakawanController;
 use App\Http\Controllers\RepositoryController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TyperepoController;
 use App\Http\Controllers\ViewrepoController;
 use App\Http\Controllers\VisimisiController;
 
@@ -66,6 +67,8 @@ Route::get('/repository', [RepositoryController::class,'index'])->name('reposito
 Route::get('/visimisi', [VisimisiController::class,'index'])->name('visimisi.index');
 
 Route::get('/pustakawan', [PustakawanController::class,'index'])->name('pustakawan.index');
+
+Route::get('/typerepo', [TyperepoController::class,'index'])->name('typerepo.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -50,13 +50,13 @@
         </svg>
         </button>
     </div>
-    <div class="items-center justify-between hidden w-full ml-8 md:flex md:w-auto md:order-1" id="navbarHamburger">
-      <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium -ml-14 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:ml-0">
+    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbarHamburger">
+      <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium mx-2 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:ml-0">
         <li>
-          <a href="{{route('welcome.index')}}" class="block py-2 px-3 mx-6 md:ml-0 md:mr-6 text-white rounded md:bg-transparent md:hover:text-[#ECAE30] md:text-white md:p-0 md:dark:text-blue-500">Beranda</a>
+          <a href="{{route('welcome.index')}}" class="block py-2 text-white rounded mx-1 md:bg-transparent md:hover:text-[#ECAE30] md:text-white md:p-0 md:dark:text-blue-500">Beranda</a>
         </li>
         <li>
-          <button onclick="dropdownTentang()" class="flex relative items-center justify-between w-full py-2 px-3 mx-6 text-white rounded md:hover:bg-transparent md:border-0 md:hover:text-[#ECAE30] md:p-0 md:w-auto">Tentang Kami <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <button onclick="dropdownTentang()" class="flex relative items-center justify-between w-full py-2 mx-1 text-white rounded md:hover:bg-transparent md:border-0 md:hover:text-[#ECAE30] md:p-0 md:w-auto">Tentang Kami <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
             </svg></button>
               <!-- Dropdown menu -->
@@ -74,38 +74,66 @@
                   </ul>
               </div>
         </li>
-      <li>
         <li>
-            <button onclick="dropdownDigital()" class="flex relative items-center justify-between w-full py-2 px-3 mx-6 text-white rounded md:hover:bg-transparent md:border-0 md:hover:text-[#ECAE30] md:p-0 md:w-auto">Digital <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <button onclick="dropdownDigital()" class="flex relative items-center justify-between w-full py-2 mx-1 text-white rounded md:hover:bg-transparent md:border-0 md:hover:text-[#ECAE30] md:p-0 md:w-auto">Digital <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
               </svg></button>
-                        <!-- Dropdown menu -->
-                        <div id="digitalNavbar" class="z-10 hidden absolute mt-5 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                              <li>
-                                <a href="https://jurnal.plb.ac.id/index.php/ekobima/index" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Jurnal (Ekobima)</a>
-                              </li>
-                              <li>
-                                <a href="https://opac.politekniklp3i-tasikmalaya.ac.id/" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Opac</a>
-                              </li>
-                            </ul>
-                        </div>
+                <!-- Dropdown menu -->
+                <div id="digitalNavbar" class="z-10 hidden absolute mt-5 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                      <li>
+                        <a href="https://jurnal.plb.ac.id/index.php/ekobima/index" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Jurnal (Ekobima)</a>
+                      </li>
+                      <li>
+                        <a href="https://opac.politekniklp3i-tasikmalaya.ac.id/" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Opac</a>
+                      </li>
+                    </ul>
+                </div>
         </li>
         <li>
-          <a href="{{ route('service.index') }}" class="block py-2 px-3 mx-6 text-white rounded md:hover:bg-transparent md:hover:text-[#ECAE30] md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pelayanan</a>
+          <a href="{{ route('service.index') }}" class="block py-2 mx-1 text-white rounded md:hover:bg-transparent md:hover:text-[#ECAE30] md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pelayanan</a>
         </li>
         <li>
-          <a href="{{ route('pedoman.index') }}" class="block py-2 px-3 mx-6 text-white rounded md:hover:bg-transparent md:hover:text-[#ECAE30] md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pedoman</a>
+          <a href="{{ route('pedoman.index') }}" class="block py-2 mx-1 text-white rounded md:hover:bg-transparent md:hover:text-[#ECAE30] md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pedoman</a>
         </li>
         <li>
-          <a href="{{ route('arsip.index') }}" class="block py-2 px-3 mx-6 text-white rounded md:hover:bg-transparent md:hover:text-[#ECAE30] md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Arsip</a>
+          <a href="{{ route('arsip.index') }}" class="block py-2 mx-1 text-white rounded md:hover:bg-transparent md:hover:text-[#ECAE30] md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Arsip</a>
         </li>  
-        {{-- <li>
-            <a href="#" class="block py-2 px-3 mx-6 text-white rounded md:hidden md:hover:bg-transparent md:hover:text-[#ECAE30] md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Profile</a>
+        <li>
+          <button onclick="dropdownMaster()" class="flex relative items-center justify-between w-full py-2 mx-1 text-white rounded md:hover:bg-transparent md:border-0 md:hover:text-[#ECAE30] md:p-0 md:w-auto">Master <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+              </svg></button>
+                <!-- Dropdown menu -->
+                <div id="masterNavbar" class="z-10 hidden absolute mt-5 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                      <li>
+                        <a href="{{route('typerepo.index')}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Type</a>
+                      </li>
+                      <li>
+                        <a href="{{route('desiderata.index')}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Desiderata</a>
+                      </li>
+                      <li>
+                        <a href="{{route('approverepo.index')}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Approve Repo</a>
+                      </li>
+                    </ul>
+                </div>
         </li>
         <li>
-        <a href="#" class="block py-2 px-3 mx-6 text-white rounded md:hidden md:hover:bg-transparent md:hover:text-[#ECAE30] md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Logout</a>
-        </li> --}}
+          <button onclick="dropdownRepository()" class="flex relative items-center justify-between w-full py-2 mx-1 text-white rounded md:hover:bg-transparent md:border-0 md:hover:text-[#ECAE30] md:p-0 md:w-auto">Repository<svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+              </svg></button>
+                <!-- Dropdown menu -->
+                <div id="repositoryNavbar" class="z-10 hidden absolute mt-5 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                      <li>
+                        <a href="{{route('inputrepo.index')}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Input Repo</a>
+                      </li>
+                      <li>
+                        <a href="{{route('viewrepo.index')}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Daftar Repository</a>
+                      </li>
+                    </ul>
+                </div>
+        </li>
         <li>
           @if (Route::has('login'))
               <div class="flex flex-row items-center justify-center gap-2">

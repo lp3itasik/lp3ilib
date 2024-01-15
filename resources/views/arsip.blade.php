@@ -147,6 +147,26 @@
             }
         }
 
+        const dropdownMaster = () => {
+            let content = document.getElementById('masterNavbar');
+            let nonactive = content.classList.contains('hidden');
+            if(nonactive){
+                content.classList.remove('hidden');
+            }else{
+                content.classList.add('hidden');
+            }
+        }
+
+        const dropdownRepository = () => {
+            let content = document.getElementById('repositoryNavbar');
+            let nonactive = content.classList.contains('hidden');
+            if(nonactive){
+                content.classList.remove('hidden');
+            }else{
+                content.classList.add('hidden');
+            }
+        }
+
         const hamburgerMenu = () => {
             let content = document.getElementById('navbarHamburger');
             let nonactive = content.classList.contains('hidden');

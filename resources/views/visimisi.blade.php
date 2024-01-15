@@ -53,16 +53,6 @@
                     </p>
                 </div>
             </div>
-{{-- 
-            <div class="px-4 text-center items-center">
-                <p class="font-bold text-black text-xl md:text-2xl mb-5">VISI</p>
-                <p class="mb-2 text-black ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis ex repellendus quas officiis voluptate veritatis deserunt velit explicabo totam molestias, nostrum est culpa deleniti natus veniam consequuntur saepe, libero magni? Quia soluta voluptatum laboriosam voluptas eveniet beatae debitis alias repellat eligendi velit omnis tempore deserunt quam recusandae earum provident quidem, assumenda, repudiandae sint sapiente perferendis facilis! Aspernatur at nam quas ratione voluptates, a aut sunt ab amet id, quia culpa dicta exercitationem explicabo, odio nostrum repellendus nulla molestiae? Deleniti, nisi.</p>
-            </div>
-
-            <div class="px-4 pt-16 text-center items-center">
-                <p class="font-bold text-black text-xl md:text-2xl mb-5">MISI</p>
-                <p class="mb-2 text-black ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, vel voluptatem laudantium ut dolores quaerat, voluptatibus totam accusantium ratione iusto molestiae dolor obcaecati. Laudantium totam, fugit est iusto vitae impedit. Necessitatibus deleniti iusto, maiores molestiae corporis illum, obcaecati omnis eius eaque pariatur, aliquam consectetur? Dolorem iusto ex dolore, quod voluptatibus delectus! Doloribus corrupti explicabo, sit sed quasi obcaecati fugiat ducimus voluptatum consequuntur a eum praesentium expedita eveniet impedit quidem repellat soluta voluptates. At sunt eveniet nihil quos quaerat tempora omnis nemo, quod voluptatum praesentium nostrum nulla deserunt voluptatibus repudiandae dolorum obcaecati fuga voluptates. Nisi nam quod harum optio, tempore minus!</p>
-            </div> --}}
             </div>
         </div>
     </div>
@@ -75,6 +65,26 @@
     <script>
         const dropdownDigital = () => {
             let content = document.getElementById('digitalNavbar');
+            let nonactive = content.classList.contains('hidden');
+            if(nonactive){
+                content.classList.remove('hidden');
+            }else{
+                content.classList.add('hidden');
+            }
+        }
+
+        const dropdownMaster = () => {
+            let content = document.getElementById('masterNavbar');
+            let nonactive = content.classList.contains('hidden');
+            if(nonactive){
+                content.classList.remove('hidden');
+            }else{
+                content.classList.add('hidden');
+            }
+        }
+
+        const dropdownRepository = () => {
+            let content = document.getElementById('repositoryNavbar');
             let nonactive = content.classList.contains('hidden');
             if(nonactive){
                 content.classList.remove('hidden');
