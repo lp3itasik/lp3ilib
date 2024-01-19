@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Repositories extends Model
+class Inputrepo extends Model
 {
     use HasFactory;
 
@@ -15,8 +15,8 @@ class Repositories extends Model
         'type_id',
         'major',
         // 'officer',
-        // 'lecturer',
-        // 'student',
+        'lecturer',
+        'student',
         'abstract',
         'subject',
         'key_word',

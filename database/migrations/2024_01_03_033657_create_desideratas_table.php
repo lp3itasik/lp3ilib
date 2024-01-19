@@ -17,6 +17,7 @@ class CreateDesideratasTable extends Migration
             $table->id();
             $table->string('book');
             $table->string('author');
+            $table->char('realisasi');
             $table->timestamps();
         });
     }

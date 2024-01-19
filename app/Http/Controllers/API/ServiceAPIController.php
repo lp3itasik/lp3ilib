@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Desiderata;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
-class DesideratasController extends Controller
+class ServiceAPIController extends Controller
 {
     public function get_all()
     {

@@ -19,7 +19,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ViewrepoController;
 use App\Http\Controllers\VisimisiController;
-
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,21 +33,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/', [BerandaController::class,'index'])->name('welcome.index');
 
-Route::get('/service', [ServiceController::class,'index'])->name('service.index');
+Route::resource('welcome', WelcomeController::class)->middleware(['auth']);
+
+Route::resource('service', ServiceController::class)->middleware(['auth']);
+Route::resource('desiderata', DesiderataController::class)->middleware(['auth']);
+Route::resource('inputrepo', InputrepoController::class)->middleware(['auth']);
+Route::resource('detailrepo', InputrepoController::class)->middleware(['auth']);
 
 Route::get('/about', [AboutController::class,'index'])->name('about.index');
 
 Route::get('/searchrepo', [SearchController::class,'index'])->name('search.index');
 
 Route::get('/viewrepo', [ViewrepoController::class,'index'])->name('viewrepo.index');
-
-Route::get('/inputrepo', [InputrepoController::class,'index'])->name('inputrepo.index');
 
 Route::get('/approverepo', [ApproverepoController::class,'index'])->name('approverepo.index');
 
@@ -59,7 +58,6 @@ Route::get('/pedoman', [PedomanController::class,'index'])->name('pedoman.index'
 
 Route::get('/berandaadmin', [BerandaadminController::class,'index'])->name('berandaadmin.index');
 
-Route::get('/desiderata', [DesiderataController::class,'index'])->name('desiderata.index');
 
 Route::get('/repository', [RepositoryController::class,'index'])->name('repository.index');
 
