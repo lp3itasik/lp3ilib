@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="shortcut icon" href="{{asset('img/lp3iwarna.png')}}">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
-</head>
-
-<body class="mx-auto max-w-screen bg-center bg-no-repeat bg-[url('/img/pattern.svg')] bg-cover">
-    <section class="">
-    {{ view('components.navbar') }}
-
-    {{-- Section Top Start --}}
-    
+<x-landing-layout>
     <div class="container mx-auto mt-12 mb-20">
         <div>
             <div class="my-8 mx-auto">
@@ -56,64 +38,4 @@
             </div>
         </div>
     </div>
-    {{-- Section Top End --}}
-
-    
-    {{ view('components.footer') }}
-
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script>
-        const dropdownDigital = () => {
-            let content = document.getElementById('digitalNavbar');
-            let nonactive = content.classList.contains('hidden');
-            if(nonactive){
-                content.classList.remove('hidden');
-            }else{
-                content.classList.add('hidden');
-            }
-        }
-
-        const dropdownMaster = () => {
-            let content = document.getElementById('masterNavbar');
-            let nonactive = content.classList.contains('hidden');
-            if(nonactive){
-                content.classList.remove('hidden');
-            }else{
-                content.classList.add('hidden');
-            }
-        }
-
-        const dropdownRepository = () => {
-            let content = document.getElementById('repositoryNavbar');
-            let nonactive = content.classList.contains('hidden');
-            if(nonactive){
-                content.classList.remove('hidden');
-            }else{
-                content.classList.add('hidden');
-            }
-        }
-
-        const dropdownTentang = () => {
-            let content = document.getElementById('tentangNavbar');
-            let nonactive = content.classList.contains('hidden');
-            if(nonactive){
-                content.classList.remove('hidden');
-            }else{
-                content.classList.add('hidden');
-            }
-        }
-
-        const hamburgerMenu = () => {
-            let content = document.getElementById('navbarHamburger');
-            let nonactive = content.classList.contains('hidden');
-            if(nonactive){
-                content.classList.remove('hidden');
-            }else{
-                content.classList.add('hidden');
-            }
-        }
-    </script>
-    </section>
-</body>
-
-</html>
+</x-landing-layout>

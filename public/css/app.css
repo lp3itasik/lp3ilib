@@ -1176,6 +1176,9 @@ select {
 .max-w-md {
   max-width: 28rem;
 }
+.max-w-xl {
+  max-width: 36rem;
+}
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -1448,6 +1451,9 @@ select {
 .border-t-8 {
   border-top-width: 8px;
 }
+.border-r {
+  border-right-width: 1px;
+}
 .border-dashed {
   border-style: dashed;
 }
@@ -1489,6 +1495,10 @@ select {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+.border-gray-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
 }
 .bg-\[\#00AEB6\] {
   --tw-bg-opacity: 1;
@@ -1720,10 +1730,6 @@ select {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
 .pb-1 {
   padding-bottom: 0.25rem;
 }
@@ -1780,6 +1786,9 @@ select {
 }
 .pt-9 {
   padding-top: 2.25rem;
+}
+.pl-10 {
+  padding-left: 2.5rem;
 }
 .text-left {
   text-align: left;
@@ -1853,6 +1862,9 @@ select {
 }
 .tracking-widest {
   letter-spacing: 0.1em;
+}
+.tracking-wider {
+  letter-spacing: 0.05em;
 }
 .text-\[\#00AEB6\] {
   --tw-text-opacity: 1;
@@ -2268,10 +2280,6 @@ select {
 .hover\:bg-slate-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
-}
-.hover\:bg-gray-900:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 .hover\:text-blue-700:hover {
   --tw-text-opacity: 1;
@@ -3117,11 +3125,6 @@ select {
     --tw-ring-color: rgb(37 99 235 / var(--tw-ring-opacity));
   }
 
-  .dark\:focus\:ring-gray-600:focus {
-    --tw-ring-opacity: 1;
-    --tw-ring-color: rgb(75 85 99 / var(--tw-ring-opacity));
-  }
-
   .dark\:focus\:ring-gray-700:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(55 65 81 / var(--tw-ring-opacity));
@@ -3146,15 +3149,6 @@ select {
   @media (prefers-color-scheme: dark) {
 
     .md\:dark\:text-blue-500 {
-      --tw-text-opacity: 1;
-      color: rgb(59 130 246 / var(--tw-text-opacity));
-    }
-
-    .md\:dark\:hover\:bg-transparent:hover {
-      background-color: transparent;
-    }
-
-    .md\:dark\:hover\:text-blue-500:hover {
       --tw-text-opacity: 1;
       color: rgb(59 130 246 / var(--tw-text-opacity));
     }
