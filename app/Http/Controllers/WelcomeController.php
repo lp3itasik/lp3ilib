@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Detrepo;
-use App\Models\Inputrepo;
 use App\Models\Repositories;
-use App\Models\Type;
-use App\Models\User;
+use App\Models\Welcome;
 use Illuminate\Http\Request;
 
-class InputrepoController extends Controller
+class WelcomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,15 +15,17 @@ class InputrepoController extends Controller
      */
     public function index()
     {
-        $repositories = Inputrepo::all();
-        $types = Type::all();
-        $users = User::where('role', 'D')->get();
-        // $types = Type::where('id', 1)->first();
-        return view('inputrepo')->with([
-            'repositories'=>$repositories,
-            'types'=>$types,
-            'users'=>$users
-        ]);
+        // $tugas_akhir = Welcome::all();
+        $tugas_akhir = Repositories::where('type_id', 6)->get();
+       $kkn = Repositories::where('type_id', 7)->get();
+       $kki = Repositories::where('type_id', 8)->get(); 
+       $pkm = Repositories::where('type_id', 12)->get();
+       return view('welcome')->with([
+           'tugas_akhir'=>$tugas_akhir,
+           'kkn'=>$kkn,
+           'kki'=>$kki,
+           'pkm'=>$pkm,
+       ]);
     }
 
     /**
@@ -47,30 +46,7 @@ class InputrepoController extends Controller
      */
     public function store(Request $request)
     {
-        $repositories=[
-            'series' => date('Ymdhis'),
-            'title' => $request->input('title'),
-            'type_id' => $request->input('type'),
-            'major' => $request->input('major'),
-            'abstract' => $request->input('abstract'),
-            'subject' => $request->input('subject'),
-            'key_word' => $request->input('key_word'),
-            'lecturer' => $request->input('lecturer'),
-            'student' => $request->input('student'),
-        ];
-        $detrepo=[
-            'series' => date('Ymdhis'),
-            'file_name' => $request->input('file_name'),
-            'typefile' => $request->input('typefile'),
-        ];
-        // dd($repositories);
-        Inputrepo::create($repositories);
-        $detail_repo = Detrepo::create($detrepo);
-        // return back()->with('message','Data Type Sudah ditambahkan');
-        return response()->json([
-            'repository' => $repositories,
-            'detail_repo' => $detail_repo,
-        ]);
+        //
     }
 
     /**

@@ -11,6 +11,8 @@ class Detrepo extends Model
 
     protected $fillable = [
         'series',
+        'file_name',
+        'typefile',
     ];
 
     protected $table = 'detail_repositories';
