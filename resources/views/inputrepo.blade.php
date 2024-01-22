@@ -433,6 +433,7 @@
 
                         reader.readAsDataURL(berkas);
                     } catch (error) {
+                    
                         alert('MOHON MAAF SERVER SEDANG TIDAK TERSEDIA');
                         console.log(error);
                     }
