@@ -19,7 +19,7 @@
 
     {{-- Section Top Start --}}
     
-    <div class="container mt-16">
+    <div class="container mt-16 mx-auto">
         <div>
             <div class="px-4 text-center items-center">
                 <p class="font-bold text-black text-xl md:text-2xl mb-5">PEMINJAMAN</p>

@@ -17,7 +17,7 @@
 
     {{-- Section Top Start --}}
     
-    <div class="container mt-8">
+    <div class="container mt-8 mx-auto">
         <div>
             <div class="text-center pt-9 mb-8 text-black ">
                 <p class="font-bold text-xl">Pedoman Penulisan</p>

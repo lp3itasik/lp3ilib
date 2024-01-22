@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="{{asset('img/lp3iwarna.png')}}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
 
@@ -46,11 +47,11 @@
                 </div>
             </form>
             <div class="w-full px-4 pt-5 mb-16">
-                <div class="flex flex-wrap text-center text-white  items-center justify-center">
-                    <p class="mr-8">Tugas Akhir : 233</p>
-                    <p class="mr-8">Laporan KKN : 233</p>
-                    <p class="mr-8">Laporan KKI : 233</p>
-                    <p>Laporan PKM : 233 </p>
+                <div class="flex flex-wrap gap-6 text-center mx-auto text-white items-center justify-center">
+                    <p class="">Tugas Akhir : 233</p>
+                    <p class="">Laporan KKN : 233</p>
+                    <p class="">Laporan KKI : 233</p>
+                    <p class="">Laporan PKM : 233 </p>
                 </div>
             </div>
 
@@ -59,7 +60,7 @@
                 <p class="text-md font-light">Berikut ini adalah kategori dari Program Studi.</p>
             </div>
 
-            <div class="container mx-auto px-10 font-inter sm:flex sm:flex-wrap sm:gap-6 sm:justify-evenly text-center">
+            <div class="container mx-auto px-10 font-inter sm:flex sm:flex-wrap sm:justify-evenly text-center">
                 <div class="rounded-md shadow-sm bg-white overflow-hidden sm:mb-0 mb-10 sm:w-64 md:w-80 lg:w-[500px] hover:border-2 hover:border-white hover:scale-105 transition-all duration-300">
                     <img src="{{asset('img/mp.jpg')}}" alt="Image Caption" class="w-full">
                     <div class="px-6 py-4">
@@ -175,6 +176,22 @@
 
         // Memanggil fungsi untuk pertama kali saat halaman dimuat
         updateClock();
+
+
+
+        function konfirmasiLogout() {
+        var konfirmasi = confirm("Apakah Anda yakin ingin logout?");
+
+        if (konfirmasi) {
+        // Proses logout dapat ditambahkan di sini
+        alert("Logout berhasil!");
+        // Redirect ke halaman login atau halaman lainnya jika diperlukan
+        // window.location.href = "halaman_login.html";
+        } else {
+        alert("Logout dibatalkan.");
+        return true;
+        }
+    }
     </script>
     </section>
 </body>

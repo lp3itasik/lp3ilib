@@ -136,7 +136,7 @@
                                         </div>
                                         
                                         <div>
-                                            <a href="#" class="font-medium bg-red-500 hover:bg-red-600 text-white py-1 px-2 md:px-4 rounded-md shadow">Hapus</a>
+                                            <a onclick="konfirmasiHapus()" href="#" class="font-medium bg-red-500 hover:bg-red-600 text-white py-1 px-2 md:px-4 rounded-md shadow">Hapus</a>
                                         </div>
                                     </td>
                                 </tr>
@@ -226,6 +226,18 @@
         $(document).ready(function() {
             $('.js-example-basic-single').select2();
         });
+
+        
+        function konfirmasiHapus() {
+        var konfirmasi = confirm("Apakah Anda yakin ingin menghapus data?");
+
+        if (konfirmasi) {
+        // Proses penghapusan data dapat ditambahkan di sini
+        alert("Data berhasil dihapus!");
+        } else {
+        alert("Penghapusan data dibatalkan.");
+        }
+    }
     </script>
 </body>
 

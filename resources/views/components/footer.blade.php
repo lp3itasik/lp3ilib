@@ -1,6 +1,6 @@
 
     {{-- Section Footer Start --}}
-    <section class="bg-primary pt-16 pb-12 w-full max-w-screen">
+    <section class="absolute bg-primary pt-16 pb-12 w-full max-w-screen">
         <div class="bg-[#ECAE30] w-full py-2 -mt-16">
         </div>
         <div class="px-4">
@@ -10,8 +10,7 @@
             </div>
 
             <div>
-                <p class="text-white text-center text-md">Jl. Ir. H. Juanda No.KM. 2, RW.No. 106, Panglayungan, Kec.
-                    Cipedes, Kab. Tasikmalaya, Jawa Barat 46151</p>
+                <p class="text-white text-center text-md">Jl. Ir. H. Juanda No.KM. 2, RW.No. 106, Panglayungan, Kec. Cipedes, Kab. Tasikmalaya, Jawa Barat 46151</p>
             </div>
         </div>
 

@@ -65,7 +65,7 @@
                               
                               <td class="flex justify-end items-center gap-4 px-6 py-4 text-center">
                                   <a href="#" class="bg-green-400 hover:bg-green-500 text-white text-sm w-28 rounded-full px-3 py-1 shadow-lg">Realisasi</a>
-                                  <a href="#" class="bg-red-400 hover:bg-red-500 text-white text-sm rounded-full px-10 py-1 shadow-lg">Hapus</a>
+                                  <a onclick="konfirmasiHapus()" href="#" class="bg-red-400 hover:bg-red-500 text-white text-sm rounded-full px-10 py-1 shadow-lg">Hapus</a>
                               </td>
                           </tr>
 
@@ -303,6 +303,18 @@
                 content.classList.add('hidden');
             }
         }
+
+        
+        function konfirmasiHapus() {
+        var konfirmasi = confirm("Apakah Anda yakin ingin menghapus data?");
+
+        if (konfirmasi) {
+        // Proses penghapusan data dapat ditambahkan di sini
+        alert("Data berhasil dihapus!");
+        } else {
+        alert("Penghapusan data dibatalkan.");
+        }
+    }
     </script>
 </body>
 

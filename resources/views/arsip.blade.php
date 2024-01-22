@@ -17,7 +17,7 @@
 
     {{-- Section Top Start --}}
     
-    <div class="container mt-8 mb-20">
+    <div class="container mt-8 mb-20 mx-auto">
         <div>
             <div class="text-center mb-8 text-black ">
                 <p class="font-bold text-xl">Arsip</p>

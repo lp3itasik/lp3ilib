@@ -24,16 +24,16 @@
                         <div class="flex items-center gap-2">
                             @auth
                                 <a href="{{ route('welcome.index') }}"
-                                    class="border bg-secondary border-gray-200 hover:bg-blue-900 hidden md:block px-3 py-1 mr-4 rounded-xl font-medium text-sm text-white space-x-1">
+                                    class="border bg-secondary border-gray-200 hover:bg-blue-900 hidden md:block px-3 py-1 mr-4 rounded-md font-medium text-sm text-white space-x-1">
                                     <i class="fa-solid fa-circle-user"></i>
                                     <span>{{ Auth::user()->name }}</span>
                                 </a>
-                              <form method="POST" action="{{ route('logout') }}" class="mr-9 border bg-red-500 border-gray-200 hover:bg-red-600 hidden md:block px-3 py-1 rounded-xl font-medium text-sm text-white space-x-1">
+                              <form method="POST" action="{{ route('logout') }}" class="mr-9 border bg-red-500 border-gray-200 hover:bg-red-600 hidden md:block px-3 py-1 rounded-md font-medium text-sm text-white space-x-1">
                                   @csrf
-                                  <button :href="route('logout')"
+                                  <button onclick="konfirmasiLogout()" data-modal-target="popup-modal" data-modal-toggle="popup-modal" :href="route('logout')"
                                       onclick="event.preventDefault(); this.closest('form').submit();">
                                       {{ __('Keluar') }}
-                                  </b>
+                                  </button>
                               </form>
                             @else
                                 <a href="{{ route('login') }}" class="rounded-lg text-white mr-9 hidden md:block">
@@ -114,6 +114,9 @@
                       </li>
                       <li>
                         <a href="{{route('approverepo.index')}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Approve Repo</a>
+                      </li>
+                      <li>
+                        <a href="{{route('inputrepo.index')}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Input Repo</a>
                       </li>
                     </ul>
                 </div>
