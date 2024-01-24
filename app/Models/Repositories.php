@@ -33,6 +33,10 @@ class Repositories extends Model
         return $this->belongsTo(User::class, 'lecturer', 'identity');
     }
 
+    public function useroff(){
+        return $this->belongsTo(User::class, 'officer', 'identity');
+    }
+
     public function types()
     {
         return $this->belongsTo(Type::class, 'type_id', 'id');

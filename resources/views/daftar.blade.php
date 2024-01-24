@@ -144,7 +144,7 @@
                                         <a
                                             class="bg-red-400 hover:bg-red-500 text-white text-sm w-28 rounded-full px-3 py-1 shadow-lg">Tugas
                                             Akhir</a>
-                                        <a href="{{ route('viewrepo.index', $da->series) }}"
+                                        <a href="{{ route('daftar.edit', $da->series) }}"
                                             class="bg-green-400 hover:bg-green-500 text-white text-sm rounded-full px-10 py-1 shadow-lg">
                                             <i class="fa-solid fa-eye"></i>
                                         </a>

@@ -63,7 +63,10 @@ class DaftarController extends Controller
      */
     public function edit($id)
     {
-        //
+        $repositories = Repositories::where('series', $id)->first();
+        return view('viewrepo')->with([
+            'repositories' => $repositories,
+        ]);
     }
 
     /**

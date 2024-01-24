@@ -28,7 +28,7 @@
                     <div class="w-full lg:w-2/3 px-4 mb-10 shadow-lg bg-white rounded-2xl">
                             <div>
                                 <h4 class="text-blue-400 uppercase font-bold mb-3 text-2xl mt-5 ">
-                                    FACTORS INFLUENCING OFFICE ACCEPTANCE TOWARDS SMART HOME TECHNOLOGY
+                                    {{$repositories->title}}
                                 </h4>
                             </div>
                       <div class="flex">
@@ -42,33 +42,33 @@
 
                       <div class="grid grid-cols-2">
                         <p class="text-gray-300 text-md">Penulis</p>
-                        <p class="text-right text-blue-500 text-md">Nabila Azzahra</p>
+                        <p class="text-right text-blue-500 text-md">{{$repositories->user->name}}</p>
                       </div>
 
                       <hr class="my-2 border-t-8">
 
                       <div class="grid grid-cols-2">
                         <p class="text-gray-300 text-md">Kontributor/Dosen Pembimbing</p>
-                        <p class="text-right text-blue-500 text-md">Sopyan Sauri, S.Kom</p>
+                        <p class="text-right text-blue-500 text-md">{{$repositories->userlec->name}}</p>
                       </div>
 
                       <hr class="my-2 border-t-8">
 
                       <div class="grid grid-cols-2">
                         <p class="text-gray-300 text-md">Jenis Koleksi</p>
-                        <p class="text-right text-blue-500 text-md">Tugas Akhir</p>
+                        <p class="text-right text-blue-500 text-md">{{$repositories->types->name}}</p>
                       </div>
 
                       <hr class="my-2 border-t-8">
 
                       <div class="grid grid-cols-2">
                         <p class="text-gray-300 text-md">Prodi</p>
-                        <p class="text-right text-blue-500 text-md">Manajemen Pemasaran</p>
+                        <p class="text-right text-blue-500 text-md">{{$repositories->major}}</p>
                       </div>
 
                       <hr class="my-2 border-t-8">
 
-                      <div class="grid grid-cols-2">
+                      {{-- <div class="grid grid-cols-2">
                         <p class="text-gray-300 text-md">Subject</p>
                         <p class="text-right text-blue-500 text-md">Internet of Things</p>
                       </div>
@@ -80,13 +80,15 @@
                         <p class="text-right text-blue-500 text-md">Internet of Things, teknologi rumah pintar , perkantoran , 
                           Unified Theory of Acceptance and Use of Technology, 
                           Multiple Linear Regression</p>
-                      </div>
+                      </div> --}}
 
-                      <hr class="my-2 border-t-8">
+                      {{-- <hr class="my-2 border-t-8"> --}}
 
                       <div class="grid grid-cols-2">
                         <p class="text-gray-300 text-md">Staff Approve</p>
-                        <p class="text-right text-blue-500 text-md">Nindy</p>
+                        <p class="text-right text-blue-500 text-md">{!! $repositories->useroff ? $repositories->useroff->name : "<span class='bg-red-500 text-white m-4 px-2 py-1 rounded-md'>belum di approve</span>" !!}
+
+                        </p>
                       </div>
 
                       <hr class="my-2 border-t-8">
@@ -100,7 +102,7 @@
 
                       <div class="grid grid-cols-2">
                         <p class="text-gray-300 text-md">Tanggal Input</p>
-                        <p class="text-right text-blue-500 text-md">21 Desember 2023</p>
+                        <p class="text-right text-blue-500 text-md">{{$repositories->created_at}}</p>
                       </div>
 
                       <div class="flex justify-center items-center my-4">
@@ -114,7 +116,7 @@
                       </div>
 
                       <div class="my-10 bg-gray-300 rounded-lg hidden shadow-lg" id="page-1">
-                        <p class=" px-4 py-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque sapiente doloribus nostrum deserunt error exercitationem pariatur quibusdam harum, minima aliquid tempore necessitatibus deleniti corrupti nam veniam quis quia laudantium iste eos sed, molestiae ad. Rem nihil veritatis reprehenderit nobis, laudantium possimus mollitia explicabo odio eligendi maxime animi odit? Dignissimos totam facere quis natus consequatur, ducimus illum, veniam blanditiis nesciunt, deserunt debitis quaerat. Porro natus aspernatur temporibus ipsum blanditiis architecto veniam nesciunt obcaecati consectetur excepturi fuga, laudantium quaerat minus! Qui eligendi cupiditate minima obcaecati! Debitis voluptate eaque unde, repudiandae illum autem ullam repellat qui tempora neque sint atque, necessitatibus pariatur iste!</p>
+                        <p class=" px-4 py-4">{{$repositories->abstract}}</p>
                       </div>
 
                       <div class="flex mt-10" id="page-2">
@@ -122,7 +124,7 @@
                           <i class="text-gray-500 fa-solid fa-file-pdf fa-2x"></i>
                         </a>
                         <a href="#" class="ml-3 text-blue-400 uppercase font-bold mb-3 text-md ">
-                          FACTORS INFLUENCING OFFICE ACCEPTANCE TOWARDS SMART HOME TECHNOLOGY
+                          {{$repositories->title}}
                         </a>
                       </div>
 

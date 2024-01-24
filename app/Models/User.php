@@ -53,5 +53,9 @@ class User extends Authenticatable
     public function daftarreposlec(){
         return $this->hasMany(Daftarrepo::class, 'lecturer', 'identity');
     }
+
+    public function daftarreposoff(){
+        return $this->hasMany(Daftarrepo::class, 'officer', 'identity');
+    }
     
 }
