@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Cache\Repository;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -44,4 +45,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function daftarrepos(){
+        return $this->hasMany(Daftarrepo::class, 'student', 'identity');
+    }
+
+    public function daftarreposlec(){
+        return $this->hasMany(Daftarrepo::class, 'lecturer', 'identity');
+    }
+    
 }

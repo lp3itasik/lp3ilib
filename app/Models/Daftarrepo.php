@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Repositories extends Model
+class Daftarrepo extends Model
 {
     use HasFactory;
 
@@ -14,13 +14,13 @@ class Repositories extends Model
         'title',
         'type_id',
         'major',
-        'officer',
+        // 'officer',
         // 'lecturer',
         // 'student',
         'abstract',
         'subject',
         'key_word',
-        'is_approve',
+        // 'is_approve',
     ];
 
     protected $table = 'repositories';
@@ -37,5 +37,6 @@ class Repositories extends Model
     {
         return $this->belongsTo(Type::class, 'type_id', 'id');
     }
+
     
 }

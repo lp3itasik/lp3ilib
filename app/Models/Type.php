@@ -20,4 +20,8 @@ class Type extends Model
 
 
    protected $table = 'types';
+
+    public function daftarrepostype(){
+        return $this->hasMany(Daftarrepo::class, 'type_id', 'id');
+    }
 }

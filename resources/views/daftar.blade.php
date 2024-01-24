@@ -109,7 +109,7 @@
     <div class="container mx-auto">
         <div class="px-4">
             <div class="px-4 pt-10 text-center items-center mb-8">
-                <p class="font-bold text-black text-xl md:text-2xl">List Approve</p>
+                <p class="font-bold text-black text-xl md:text-2xl">List Repository</p>
             </div>
 
 
@@ -144,7 +144,7 @@
                                         <a
                                             class="bg-red-400 hover:bg-red-500 text-white text-sm w-28 rounded-full px-3 py-1 shadow-lg">Tugas
                                             Akhir</a>
-                                        <a href="{{ route('daftarapproverepo.edit', $da->series) }}"
+                                        <a href="{{ route('viewrepo.index', $da->series) }}"
                                             class="bg-green-400 hover:bg-green-500 text-white text-sm rounded-full px-10 py-1 shadow-lg">
                                             <i class="fa-solid fa-eye"></i>
                                         </a>

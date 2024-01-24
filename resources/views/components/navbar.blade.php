@@ -127,7 +127,7 @@
                         class="z-10 hidden absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
                         <ul class="py-2 text-sm text-gray-700">
                             <li>
-                                <a href="{{ route('typerepo.index') }}"
+                                <a href="{{ route('type.index') }}"
                                     class="block px-4 py-2 hover:bg-gray-100">Type</a>
                             </li>
                             <li>
@@ -135,7 +135,7 @@
                                     class="block px-4 py-2 hover:bg-gray-100">Desiderata</a>
                             </li>
                             <li>
-                                <a href="{{ route('approverepo.index') }}"
+                                <a href="{{ route('daftarapproverepo.index') }}"
                                     class="block px-4 py-2 hover:bg-gray-100">Approve
                                     Repo</a>
                             </li>
@@ -160,12 +160,12 @@
                         class="z-10 hidden absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
                         <ul class="py-2 text-sm text-gray-700">
                             <li>
-                                <a href="{{ route('inputrepo.index') }}"
+                                <a href="{{ route('inputrepouser.index') }}"
                                     class="block px-4 py-2 hover:bg-gray-100">Input
                                     Repo</a>
                             </li>
                             <li>
-                                <a href="{{ route('viewrepo.index') }}"
+                                <a href="{{ route('daftar.index') }}"
                                     class="block px-4 py-2 hover:bg-gray-100">Daftar
                                     Repository</a>
                             </li>

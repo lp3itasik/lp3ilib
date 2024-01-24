@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\Type;
+use App\Models\Repositories;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class TypeController extends Controller
+class DaftarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,11 @@ class TypeController extends Controller
      */
     public function index()
     {
-        $types = Type::all();
-        // $types = Type::where('id', 1)->get();
+        // $daftarapproverepo = Repositories::all();
+        $daftarapproverepo = Repositories::where('student', Auth::user()->identity)->get();
         // $types = Type::where('id', 1)->first();
-        return view('typerepo')->with([
-            'types'=>$types
+        return view('daftar')->with([
+            'daftarapproverepo'=>$daftarapproverepo
         ]);
     }
 
@@ -41,17 +41,7 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => ['required'],
-        ], [
-            'name.required' => 'Kolom Type tidak boleh kosong.',
-        ]);
-
-        $data=[
-            'name' => $request->input('name'),
-        ];
-        Type::create($data);
-        return back()->with('message','Data Type Sudah ditambahkan');
+        //
     }
 
     /**
@@ -62,10 +52,7 @@ class TypeController extends Controller
      */
     public function show($id)
     {
-        $type = Type::findOrFail($id);
-        return view('pages.backend.types.up')->with([
-            'type'=>$type
-        ]);
+        //
     }
 
     /**
@@ -88,24 +75,7 @@ class TypeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => ['required'],
-        ], [
-            'name.required' => 'Kolom Type tidak boleh kosong.',
-        ]);
-
-        $data=[
-            'name' => $request->input('name'),
-        ];
-
-        $type = Type::findOrFail($id);
-
-        if ($type) {
-            $type->update($data);
-            return redirect()->route('types.index')->with('message', 'Data Type Sudah diupdate');
-        } else {
-            return redirect()->route('types.index')->with('error', 'Data Type tidak ditemukan');
-        }
+        //
     }
 
     /**
@@ -116,8 +86,6 @@ class TypeController extends Controller
      */
     public function destroy($id)
     {
-        $type = Type::findOrFail($id);
-        $type->delete();
-        return back()->with('message_delete','Data Type Sudah dihapus');
+        //
     }
 }

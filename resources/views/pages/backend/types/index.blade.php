@@ -7,8 +7,6 @@
     <div class="max-w-7xl container mx-auto p-5">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
 
-
-
             <div class="w-full text-slate-950 p-4 rounded-lg lg:bg-white shadow-xl md:bg-orange-500 bg-slate-500">
                 @if (session('message'))
                     <div class="bg-green-200 text-green-800 p-4 my-4 rounded">

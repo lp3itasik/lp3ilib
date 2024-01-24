@@ -10,8 +10,10 @@ use App\Http\Controllers\ArsipController;
 use App\Http\Controllers\BerandaadminController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\DaftarapproverepoController;
+use App\Http\Controllers\DaftarController;
 use App\Http\Controllers\DesiderataController;
 use App\Http\Controllers\InputrepoController;
+use App\Http\Controllers\InputrepouserController;
 use App\Http\Controllers\PedomanController;
 use App\Http\Controllers\PustakawanController;
 use App\Http\Controllers\RepositoryController;
@@ -21,6 +23,7 @@ use App\Http\Controllers\TyperepoController;
 use App\Http\Controllers\ViewrepoController;
 use App\Http\Controllers\VisimisiController;
 use App\Http\Controllers\WelcomeController;
+use App\Models\Daftarrepo;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,6 +45,12 @@ Route::resource('service', ServiceController::class)->middleware(['auth']);
 Route::resource('desiderata', DesiderataController::class)->middleware(['auth']);
 Route::resource('inputrepo', InputrepoController::class)->middleware(['auth']);
 Route::resource('detailrepo', InputrepoController::class)->middleware(['auth']);
+Route::resource('type', TypeController::class)->middleware(['auth']);
+Route::resource('daftarapproverepo', DaftarapproverepoController::class)->middleware(['auth']);
+Route::resource('inputrepouser', InputrepouserController::class)->middleware(['auth']);
+Route::resource('daftar', DaftarController::class)->middleware(['auth']);
+
+Route::resource('approverepo', ApproverepoController::class)->middleware(['auth']);
 
 Route::get('/about', [AboutController::class,'index'])->name('about.index');
 
@@ -49,11 +58,10 @@ Route::get('/searchrepo', [SearchController::class,'index'])->name('search.index
 
 Route::get('/viewrepo', [ViewrepoController::class,'index'])->name('viewrepo.index');
 
-Route::get('/approverepo', [ApproverepoController::class,'index'])->name('approverepo.index');
+// Route::get('/approverepo', [ApproverepoController::class,'index'])->name('approverepo.index');
 
 Route::get('/arsip', [ArsipController::class,'index'])->name('arsip.index');
 
-Route::get('/daftarapproverepo', [DaftarapproverepoController::class,'index'])->name('daftarapproverepo.index');
 
 Route::get('/pedoman', [PedomanController::class,'index'])->name('pedoman.index');
 
@@ -65,8 +73,6 @@ Route::get('/repository', [RepositoryController::class,'index'])->name('reposito
 Route::get('/visimisi', [VisimisiController::class,'index'])->name('visimisi.index');
 
 Route::get('/pustakawan', [PustakawanController::class,'index'])->name('pustakawan.index');
-
-Route::get('/typerepo', [TyperepoController::class,'index'])->name('typerepo.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
