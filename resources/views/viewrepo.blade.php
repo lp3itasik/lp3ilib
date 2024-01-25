@@ -90,7 +90,7 @@
                             <a href="#">
                                 <i class="text-gray-500 fa-solid fa-file-pdf fa-2x"></i>
                             </a>
-                            <a href="#" class="ml-3 text-wrap text-blue-400 uppercase font-bold mb-3 text-md ">
+                            <a href="https://opac.politekniklp3i-tasikmalaya.ac.id:8444/download?identity={{ $repositories->student }}&filename={{ $repositories->Det->file_name }}-{{ $repositories->Det->id }}{{ $repositories->Det->typefile }}" class="ml-3 text-wrap text-blue-400 uppercase font-bold mb-3 text-md ">
                                 {{ $repositories->title }}
                             </a>
                         </div>

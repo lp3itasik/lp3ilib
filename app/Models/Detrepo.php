@@ -16,4 +16,8 @@ class Detrepo extends Model
     ];
 
     protected $table = 'detail_repositories';
+
+    public function Repo(){
+        return $this->hasMany(Repositories::class, 'series');
+    }
 }

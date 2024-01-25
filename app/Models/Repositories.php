@@ -41,5 +41,10 @@ class Repositories extends Model
     {
         return $this->belongsTo(Type::class, 'type_id', 'id');
     }
+
+    public function Det()
+    {
+        return $this->belongsTo(Detrepo::class, 'series', 'series');
+    }
     
 }
