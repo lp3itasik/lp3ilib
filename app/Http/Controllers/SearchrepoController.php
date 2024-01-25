@@ -5,27 +5,22 @@ namespace App\Http\Controllers;
 use App\Models\Repositories;
 use Illuminate\Http\Request;
 
-class ViewrepoController extends Controller
+class SearchrepoController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
-        $repository = Repositories::where('series', $id)->first();
-
-        if (!$repository) {
-            // Handle the case where the repository is not found
-            return redirect()
-                ->route('daftarapproverepo.index')
-                ->with('error', 'Repository not found.');
-        }
-
-        return view('approverepo.index')->with([
-            'repository' => $repository,
+        $searchVal = request('search');
+        $repositories = Repositories::where('title', 'LIKE','%'.$searchVal.'%')->get();
+        return view('search')->with([
+            'repositories' => $repositories
         ]);
+
+        // redirectnya nanti ke search.blade.php cuma menampilkan sesuai dengan yang dicari
     }
 
     /**
@@ -68,13 +63,13 @@ class ViewrepoController extends Controller
      */
     public function edit($id)
     {
-        // $classes = Classes::all();
-        // $student = Student::where('nim', $id)->get();
-        $repositories = Repositories::where('series', $id)->first();
-        return view('viewrepo')->with([
+        // $company = Company::all();
+        $repositories = Repositories::where('type_id', $id)->get();
+        // $company = Company::where('id', $id)->first();
+        return view('search')->with([
             'repositories' => $repositories,
-            // 'classes' => $classes,
         ]);
+        // return view('company.edit');
     }
 
     /**

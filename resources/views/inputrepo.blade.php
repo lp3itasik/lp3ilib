@@ -1,29 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Input Repo</title>
-    <link rel="shortcut icon" href="{{ asset('img/lp3iwarna.png') }}">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ asset('css/select2-input.css') }}">
-</head>
-
-<body class=" mx-auto max-w-screen bg-center bg-no-repeat bg-[url('/img/pattern.svg')] bg-cover">
-
-
-    {{-- Section Navbar Start --}}
-    {{ view('components.navbar') }}
-    {{-- Section Navbar End --}}
-
-
-    {{-- Section Top Start --}}
-
+<x-landing-layout>
     <div class="container mx-auto mt-14">
         <div>
             <div class="px-4 text-center items-center">
@@ -306,161 +281,83 @@
             </section>
         </div>
     </div>
-    {{-- Section Top End --}}
+    @push('scripts')
+        <script>
+            const uploadBerkas = async (event) => {
+                event.preventDefault();
+                let timestamp = new Date();
+                let identity = document.getElementById('identity').value;
+                let type = document.getElementById('type').value;
+                let title = document.getElementById('title').value;
+                let major = document.getElementById('major').value;
+                let abstract = document.getElementById('abstrak').value;
+                let subject = document.getElementById('subject').value;
+                let key_word = document.getElementById('key_word').value;
+                let lecturer = document.getElementById('lecturer').value;
+                let series =
+                    `${timestamp.getFullYear()}${timestamp.getMonth()}${timestamp.getDate()}${timestamp.getHours()}${timestamp.getMinutes()}`;
+                let file = document.getElementById('files');
 
+                if (file.files.length > 0) {
+                    let konfirmasi = confirm(`Apakah anda yakin akan mengunggah berkas ${file.files[0].name}`);
+                    if (konfirmasi) {
 
-
-    {{-- Section Footer Start --}}
-    {{ view('components.footer') }}
-    {{-- Section Footer End --}}
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
-    <script>
-        const dropdownDigital = () => {
-            let content = document.getElementById('digitalNavbar');
-            let nonactive = content.classList.contains('hidden');
-            if (nonactive) {
-                content.classList.remove('hidden');
-            } else {
-                content.classList.add('hidden');
-            }
-        }
-
-        const dropdownMaster = () => {
-            let content = document.getElementById('masterNavbar');
-            let nonactive = content.classList.contains('hidden');
-            if(nonactive){
-                content.classList.remove('hidden');
-            }else{
-                content.classList.add('hidden');
-            }
-        }
-
-        const dropdownRepository = () => {
-            let content = document.getElementById('repositoryNavbar');
-            let nonactive = content.classList.contains('hidden');
-            if(nonactive){
-                content.classList.remove('hidden');
-            }else{
-                content.classList.add('hidden');
-            }
-        }
-
-        const dropdownTentang = () => {
-            let content = document.getElementById('tentangNavbar');
-            let nonactive = content.classList.contains('hidden');
-            if (nonactive) {
-                content.classList.remove('hidden');
-            } else {
-                content.classList.add('hidden');
-            }
-        }
-
-        const hamburgerMenu = () => {
-            let content = document.getElementById('navbarHamburger');
-            let nonactive = content.classList.contains('hidden');
-            if (nonactive) {
-                content.classList.remove('hidden');
-            } else {
-                content.classList.add('hidden');
-            }
-        }
-
-        const abstrakMenu = () => {
-            let content = document.getElementById('isiAbstrak');
-            let nonactive = content.classList.contains('hidden');
-            if (nonactive) {
-                content.classList.remove('hidden');
-            } else {
-                content.classList.add('hidden');
-            }
-        }
-
-        $(document).ready(function() {
-            $('.js-example-basic-single').select2();
-        });
-    </script>
-
-    <script>
-        const uploadBerkas = async (event) => {
-            event.preventDefault();
-            let timestamp = new Date();
-            let identity = document.getElementById('identity').value;
-            let type = document.getElementById('type').value;
-            let title = document.getElementById('title').value;
-            let major = document.getElementById('major').value;
-            let abstract = document.getElementById('abstrak').value;
-            let subject = document.getElementById('subject').value;
-            let key_word = document.getElementById('key_word').value;
-            let lecturer = document.getElementById('lecturer').value;
-            let series =
-                `${timestamp.getFullYear()}${timestamp.getMonth()}${timestamp.getDate()}${timestamp.getHours()}${timestamp.getMinutes()}`;
-            let file = document.getElementById('files');
-
-            if (file.files.length > 0) {
-                let konfirmasi = confirm(`Apakah anda yakin akan mengunggah berkas ${file.files[0].name}`);
-                if (konfirmasi) {
-
-                    const berkas = file.files[0];
-                    const reader = new FileReader();
-                    let data = {
-                        series: series,
-                        file_name: `${identity}-${type}-${series}`,
-                        typefile: `.${berkas.name.split('.').pop()}`,
-                        title: title,
-                        major: major,
-                        abstract: abstract,
-                        subject: subject,
-                        key_word: key_word,
-                        lecturer: lecturer,
-                        student: identity,
-                        type: type,
-                    }
-
-                    const responseDatabase = await axios.post(`/detailrepo`, data, {
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
-                            'Content-Type': 'application/json', // Make sure to set the content type
-                            // Any other headers you may need
+                        const berkas = file.files[0];
+                        const reader = new FileReader();
+                        let data = {
+                            series: series,
+                            file_name: `${identity}-${type}-${series}`,
+                            typefile: `.${berkas.name.split('.').pop()}`,
+                            title: title,
+                            major: major,
+                            abstract: abstract,
+                            subject: subject,
+                            key_word: key_word,
+                            lecturer: lecturer,
+                            student: identity,
+                            type: type,
                         }
-                    });
 
-
-                    try {
-                        if (responseDatabase.data.detail_repo.id) {
-                            reader.onload = async (event) => {
-                                let repository = {
-                                    identity: identity,
-                                    type: type,
-                                    series: series,
-                                    id: responseDatabase.data.detail_repo.id,
-                                    typefile: berkas.name.split('.').pop(),
-                                    file: event.target.result.split(';base64,').pop(),
-                                };
-
-                                console.log(repository);
-                                const responseUpload = await axios.post(
-                                    `https://opac.politekniklp3i-tasikmalaya.ac.id:8444/upload`,
-                                    repository);
-                                alert(responseUpload.data.message);
-                                location.reload();
+                        const responseDatabase = await axios.post(`/detailrepo`, data, {
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                                'Content-Type': 'application/json', // Make sure to set the content type
+                                // Any other headers you may need
                             }
+                        });
+
+
+                        try {
+                            if (responseDatabase.data.detail_repo.id) {
+                                reader.onload = async (event) => {
+                                    let repository = {
+                                        identity: identity,
+                                        type: type,
+                                        series: series,
+                                        id: responseDatabase.data.detail_repo.id,
+                                        typefile: berkas.name.split('.').pop(),
+                                        file: event.target.result.split(';base64,').pop(),
+                                    };
+
+                                    console.log(repository);
+                                    const responseUpload = await axios.post(
+                                        `https://opac.politekniklp3i-tasikmalaya.ac.id:8444/upload`,
+                                        repository);
+                                    alert(responseUpload.data.message);
+                                    location.reload();
+                                }
+                            }
+
+                            reader.readAsDataURL(berkas);
+                        } catch (error) {
+
+                            alert('MOHON MAAF SERVER SEDANG TIDAK TERSEDIA');
+                            console.log(error);
                         }
 
-                        reader.readAsDataURL(berkas);
-                    } catch (error) {
-
-                        alert('MOHON MAAF SERVER SEDANG TIDAK TERSEDIA');
-                        console.log(error);
                     }
-
                 }
-            }
-        };
-    </script>
-</body>
-
-</html>
+            };
+        </script>
+    @endpush
+</x-landing-layout>

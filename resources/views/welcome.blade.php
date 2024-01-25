@@ -16,7 +16,7 @@
                 </div>
 
             </div>
-            <form class="mx-20">
+            <div class="mx-20">
                 <label for="default-search"
                     class="mb-2 mx-10 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                 <div class="relative">
@@ -27,14 +27,14 @@
                                 d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                         </svg>
                     </div>
-                    <input type="search" id="default-search"
+                    <input type="search" id="search" name="search"
                         class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-secondary focus:border-primary"
-                        placeholder="" required>
-                    <a href="{{ route('search.index') }}" type="submit"
+                        placeholder="" onkeypress="handleKeyPress(event)" required>
+                    <button type="button" onclick="searchRepo()"
                         class="text-slate-900 absolute end-2.5 bottom-2.5 bg-white hover:bg-slate-200 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2">
-                        Cari</a>
+                        Cari</button>
                 </div>
-            </form>
+            </div>
             <div class="w-full px-4 pt-5 mb-16">
                 <div class="flex flex-wrap text-center text-white  items-center justify-center">
                     <p class="mr-8">Tugas Akhir: {{ $tugas_akhir ? count($tugas_akhir) : 0 }}</p>
@@ -113,6 +113,24 @@
 
             // Memanggil fungsi untuk pertama kali saat halaman dimuat
             updateClock();
+        </script>
+        <script>
+            const searchRepo = async () => {
+                let search = document.getElementById('search').value;
+                urlSearch = `/searchrepo?search=${search}`;
+                window.location.href = urlSearch;
+            }
+        </script>
+        <script>
+            function handleKeyPress(event) {
+                if (event.key === 'Enter') {
+                    // Prevent the default form submission
+                    event.preventDefault();
+                    
+                    // Call your search function
+                    searchRepo();
+                }
+            }
         </script>
     @endpush
 </x-landing-layout>

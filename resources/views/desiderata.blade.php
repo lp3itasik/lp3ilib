@@ -1,108 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Desiderata</title>
-    <link rel="shortcut icon" href="{{ asset('img/lp3iwarna.png') }}">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
-    {{-- DataTables --}}
-    <link rel="stylesheet" href="{{ asset('css/jquery.dataTables.min.css') }}">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-
-    <style>
-        html,
-        /* body {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Roboto Mono', monospace;
-            font-family: 'Source Code Pro', monospace;
-        } */
-
-        td,
-        th {
-            white-space: nowrap;
-        }
-
-        .dataTables_length>label {
-            font-size: 14px !important;
-            color: #6b7280 !important;
-        }
-
-        .dataTables_info,
-        .paginate_button {
-            font-size: 14px !important;
-            color: #6b7280 !important;
-        }
-
-        .dataTables_length>label>select {
-            font-size: 14px !important;
-            padding: 3px 20px 3px 15px !important;
-            border-radius: 10px !important;
-            margin: 5px !important;
-        }
-
-        .dataTables_filter>label {
-            font-size: 14px !important;
-        }
-
-        .dataTables_filter>label>input {
-            margin: 5px !important;
-            border-radius: 10px !important;
-        }
-
-        /* .js-example-placeholder-single {
-            height: 1000px;
-        } */
-
-        .select2-container .select2-selection--single {
-            width: 100% !important;
-            background-color: #f9fafb;
-            border: 1px solid #d1d5db !important;
-            padding: 0.5rem 0.75rem;
-            font-size: 0.875rem;
-            height: 43px;
-            border-radius: 0.4rem;
-            color: #1f2937;
-        }
-
-        .select2-container .select2-selection--single .select2-selection__arrow {
-            top: 20% !important;
-            right: 8px;
-        }
-
-        .select2-container .select2-selection--single .select2-selection__rendered {
-            font-size: 14px !important;
-            top: -2px;
-            left: -6px;
-            position: relative;
-            color: #1f2937;
-        }
-
-        .select2-search__field {
-            font-size: 14px !important;
-            border-radius: 0.5rem;
-        }
-
-        .select2-results {
-            font-size: 14px !important;
-            border-radius: 0px 10px 0px 10px;
-        }
-    </style>
-
-
-</head>
-
-<body class=" mx-auto max-w-screen bg-center bg-no-repeat bg-[url('/img/pattern.svg')] bg-cover">
-    {{ view('components.navbar') }}
-
+<x-landing-layout>
     <div class="container px-4 mx-auto">
         <div>
             <div class="px-4 pt-10 text-center items-center mb-8">
@@ -153,208 +49,127 @@
                 </div>
             </div>
         </div>
+    </div>
+</x-landing-layout>
 
-        <script>
-            $(document).ready(function() {
-                $('#coba-datatable').DataTable();
+<script>
+    $(document).ready(function() {
+        $('#coba-datatable').DataTable();
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const searchInput = document.getElementById("table-search");
+        const bookRows = document.querySelectorAll(".book-row");
+
+        searchInput.addEventListener("input", function() {
+            const searchTerm = searchInput.value.toLowerCase();
+
+            bookRows.forEach(function(row) {
+                const bookTitle = row.dataset.title.toLowerCase();
+                if (bookTitle.includes(searchTerm)) {
+                    row.style.display = "table-row";
+                } else {
+                    row.style.display = "none";
+                }
             });
-        </script>
+        });
 
+        // Optional: Handle pagination links
+        const paginationLinks = document.querySelectorAll('.pagination a');
 
-        {{-- Section Footer Start --}}
-        {{ view('components.footer') }}
-        {{-- Section Footer End --}}
+        paginationLinks.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
 
-        <script src="{{ asset('js/app.js') }}"></script>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const searchInput = document.getElementById("table-search");
-                const bookRows = document.querySelectorAll(".book-row");
-
-                searchInput.addEventListener("input", function() {
-                    const searchTerm = searchInput.value.toLowerCase();
-
-                    bookRows.forEach(function(row) {
-                        const bookTitle = row.dataset.title.toLowerCase();
-                        if (bookTitle.includes(searchTerm)) {
-                            row.style.display = "table-row";
-                        } else {
-                            row.style.display = "none";
-                        }
-                    });
-                });
-
-                // Optional: Handle pagination links
-                const paginationLinks = document.querySelectorAll('.pagination a');
-
-                paginationLinks.forEach(function(link) {
-                    link.addEventListener('click', function(e) {
-                        e.preventDefault();
-
-                        // Use AJAX to fetch the next page of data and update the table
-                        // You can make a new AJAX request to the server endpoint that returns paginated data
-                    });
-                });
+                // Use AJAX to fetch the next page of data and update the table
+                // You can make a new AJAX request to the server endpoint that returns paginated data
             });
-        </script>
-        <script>
-            const dropdownDigital = () => {
-                let content = document.getElementById('digitalNavbar');
-                let nonactive = content.classList.contains('hidden');
-                if (nonactive) {
-                    content.classList.remove('hidden');
-                } else {
-                    content.classList.add('hidden');
-                }
-            }
-
-            const dropdownMaster = () => {
-                let content = document.getElementById('masterNavbar');
-                let nonactive = content.classList.contains('hidden');
-                if (nonactive) {
-                    content.classList.remove('hidden');
-                } else {
-                    content.classList.add('hidden');
-                }
-            }
-
-            const dropdownRepository = () => {
-                let content = document.getElementById('repositoryNavbar');
-                let nonactive = content.classList.contains('hidden');
-                if (nonactive) {
-                    content.classList.remove('hidden');
-                } else {
-                    content.classList.add('hidden');
-                }
-            }
-
-            const dropdownTentang = () => {
-                let content = document.getElementById('tentangNavbar');
-                let nonactive = content.classList.contains('hidden');
-                if (nonactive) {
-                    content.classList.remove('hidden');
-                } else {
-                    content.classList.add('hidden');
-                }
-            }
-
-            const dropdownRadioButton = () => {
-                let content = document.getElementById('dropdownRadio');
-                let nonactive = content.classList.contains('hidden');
-                if (nonactive) {
-                    content.classList.remove('hidden');
-                } else {
-                    content.classList.add('hidden');
-                }
-            }
-
-            const hamburgerMenu = () => {
-                let content = document.getElementById('navbarHamburger');
-                let nonactive = content.classList.contains('hidden');
-                if (nonactive) {
-                    content.classList.remove('hidden');
-                } else {
-                    content.classList.add('hidden');
-                }
-            }
-
-
-            function konfirmasiHapus() {
-                var konfirmasi = confirm("Apakah Anda yakin ingin menghapus data?");
-
-                if (konfirmasi) {
-                    // Proses penghapusan data dapat ditambahkan di sini
-                    alert("Data berhasil dihapus!");
-                } else {
-                    alert("Penghapusan data dibatalkan.");
-                }
-            }
-        </script>
-        <script>
-            const desiderataDelete = async (id, book) => {
-                let check = $('meta[name="csrf-token"]').attr('content');
-                let tanya = confirm(`Apakah anda yakin untuk menghapus Buku ${book} ?`);
-                if (tanya) {
-                    await axios.post(`/desideratas/${id}`, {
-                            '_method': 'DELETE',
-                            '_token': $('meta[name="csrf-token"]').attr('content')
-                        })
-                        .then(function(response) {
-                            // Handle success
-                            location.reload();
-                        })
-                        .catch(function(error) {
-                            // Handle error
-                            alert('Error deleting record');
-                            console.log(error);
-                        });
-                }
-            }
-
-            const desiderataUpdate = async (id, book) => {
-                let tanya = confirm(`Realisasikan buku ${book}?`);
-                if (tanya) {
-                    const csrftoken = $('meta[name="csrf-token"]').attr('content');
-                    await axios.post(`/desiderata/${id}`, {
-                            '_method': 'PATCH',
-                            '_token': $('meta[name="csrf-token"]').attr('content')
-                        })
-                        .then(function(response) {
-                            // Handle success
-                            // location.reload();
-                            console.log(response);
-                        })
-                        .catch(function(error) {
-                            // Handle error
-                            alert('Error deleting record');
-                            console.log(error);
-                        });
-                }
-                // try {
-                //     const response = await axios({
-                //         method: 'post',
-                //         url: `/desideratas/${id}`,
-                //         headers: {
-                //             'X-CSRF-Token': csrfToken,
-                //         },
-                //         data: {
-                //             '_method': 'PATCH',
-                //         },
-                //     });
-
-                //     console.log(response);
-
-                //     // Handle success
-                //     // alert('Record updated successfully');
-                //     // location.reload();
-                // } catch (error) {
-                //     // Handle error
-                //     // alert('Error Ai Kamu ihhhh... Ada yang salah kata gw mahhhhh');
-                //     console.error(error);
-                // }
-
-            };
-        </script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const searchInput = document.getElementById("table-search");
-                const bookRows = document.querySelectorAll(".book-row");
-
-                searchInput.addEventListener("input", function() {
-                    const searchTerm = searchInput.value.toLowerCase();
-
-                    bookRows.forEach(function(row) {
-                        const bookTitle = row.dataset.title.toLowerCase();
-                        if (bookTitle.includes(searchTerm)) {
-                            row.style.display = "table-row";
-                        } else {
-                            row.style.display = "none";
-                        }
-                    });
+        });
+    });
+</script>
+<script>
+    const desiderataDelete = async (id, book) => {
+        let check = $('meta[name="csrf-token"]').attr('content');
+        let tanya = confirm(`Apakah anda yakin untuk menghapus Buku ${book} ?`);
+        if (tanya) {
+            await axios.post(`/desideratas/${id}`, {
+                    '_method': 'DELETE',
+                    '_token': $('meta[name="csrf-token"]').attr('content')
+                })
+                .then(function(response) {
+                    // Handle success
+                    location.reload();
+                })
+                .catch(function(error) {
+                    // Handle error
+                    alert('Error deleting record');
+                    console.log(error);
                 });
-            });
-        </script>
-</body>
+        }
+    }
 
-</html>
+    const desiderataUpdate = async (id, book) => {
+        let tanya = confirm(`Realisasikan buku ${book}?`);
+        if (tanya) {
+            const csrftoken = $('meta[name="csrf-token"]').attr('content');
+            await axios.post(`/desiderata/${id}`, {
+                    '_method': 'PATCH',
+                    '_token': $('meta[name="csrf-token"]').attr('content')
+                })
+                .then(function(response) {
+                    // Handle success
+                    // location.reload();
+                    console.log(response);
+                })
+                .catch(function(error) {
+                    // Handle error
+                    alert('Error deleting record');
+                    console.log(error);
+                });
+        }
+        // try {
+        //     const response = await axios({
+        //         method: 'post',
+        //         url: `/desideratas/${id}`,
+        //         headers: {
+        //             'X-CSRF-Token': csrfToken,
+        //         },
+        //         data: {
+        //             '_method': 'PATCH',
+        //         },
+        //     });
+
+        //     console.log(response);
+
+        //     // Handle success
+        //     // alert('Record updated successfully');
+        //     // location.reload();
+        // } catch (error) {
+        //     // Handle error
+        //     // alert('Error Ai Kamu ihhhh... Ada yang salah kata gw mahhhhh');
+        //     console.error(error);
+        // }
+
+    };
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const searchInput = document.getElementById("table-search");
+        const bookRows = document.querySelectorAll(".book-row");
+
+        searchInput.addEventListener("input", function() {
+            const searchTerm = searchInput.value.toLowerCase();
+
+            bookRows.forEach(function(row) {
+                const bookTitle = row.dataset.title.toLowerCase();
+                if (bookTitle.includes(searchTerm)) {
+                    row.style.display = "table-row";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        });
+    });
+</script>

@@ -17,7 +17,7 @@ use App\Http\Controllers\InputrepouserController;
 use App\Http\Controllers\PedomanController;
 use App\Http\Controllers\PustakawanController;
 use App\Http\Controllers\RepositoryController;
-use App\Http\Controllers\SearchController;
+use App\Http\Controllers\SearchrepoController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TyperepoController;
 use App\Http\Controllers\ViewrepoController;
@@ -49,14 +49,15 @@ Route::resource('type', TypeController::class)->middleware(['auth']);
 Route::resource('daftarapproverepo', DaftarapproverepoController::class)->middleware(['auth']);
 Route::resource('inputrepouser', InputrepouserController::class)->middleware(['auth']);
 Route::resource('daftar', DaftarController::class)->middleware(['auth']);
+Route::resource('searchrepo', SearchrepoController::class)->middleware(['auth']);
+Route::resource('viewrepo', ViewrepoController::class)->middleware(['auth']);
 
 Route::resource('approverepo', ApproverepoController::class)->middleware(['auth']);
 
 Route::get('/about', [AboutController::class,'index'])->name('about.index');
 
-Route::get('/searchrepo', [SearchController::class,'index'])->name('search.index');
 
-Route::get('/viewrepo', [ViewrepoController::class,'index'])->name('viewrepo.index');
+// Route::get('/viewrepo', [ViewrepoController::class,'index'])->name('viewrepo.index');
 
 // Route::get('/approverepo', [ApproverepoController::class,'index'])->name('approverepo.index');
 
