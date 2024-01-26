@@ -3,7 +3,7 @@
             <div class="flex flex-col items-center justify-center">
                 <div
                     class=" w-60 h-60 mt-16 border-2 border-[#ECAE30] rounded-full shadow-lg mx-auto transition-all duration-300 cursor-pointer hover:rotate-6 hover:scale-105 hover:border-white">
-                    <img src="{{ asset('img/nindi.jpg') }}" alt="" class="rounded-full w-60 h-60">
+                    <img src="{{ asset('img/nindi.jpeg') }}" alt="" class="rounded-full w-60 h-60">
                 </div>
 
                 <div class="px-4 pt-2 text-center items-center">

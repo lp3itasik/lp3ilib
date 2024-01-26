@@ -53,7 +53,7 @@
             <div class="container mx-auto px-10 font-inter sm:flex sm:flex-wrap sm:justify-evenly text-center">
                 <div
                     class="rounded-md shadow-sm bg-white overflow-hidden sm:mb-0 mb-10 sm:w-64 md:w-80 lg:w-[500px] hover:border-2 hover:border-white hover:scale-105 transition-all duration-300">
-                    <img src="{{ asset('img/mp.jpg') }}" alt="Image Caption" class="w-full">
+                    <img src="{{ asset('img/mp.jpeg') }}" alt="Image Caption" class="w-full">
                     <div class="px-6 py-4">
                         <div class="font-semibold text-md mb-2 text-slate-700">Manajemen Pemasaran</div>
                         <p class="text-sm text-slate-600">Politeknik LP3I Kampus Tasikmalaya</p>
@@ -62,7 +62,7 @@
 
                 <div
                     class="rounded-md shadow-sm bg-white overflow-hidden sm:mb-0 mb-10 sm:w-64 md:w-80 lg:w-[500px] hover:border-2 hover:border-white hover:scale-105 transition-all duration-300">
-                    <img src="{{ asset('img/mkp.jpg') }}" alt="Image Caption" class="w-full">
+                    <img src="{{ asset('img/mkp.jpeg') }}" alt="Image Caption" class="w-full">
                     <div class="px-6 py-4">
                         <div class="font-semibold text-md mb-2 text-slate-700">Manajemen Keuangan Perbankan</div>
                         <p class="text-sm text-slate-600">Politeknik LP3I Kampus Tasikmalaya</p>
@@ -70,7 +70,7 @@
                 </div>
             </div>
     </section>
-    
+
     <div class="w-full">
         @include('components.footer')
     </div>
@@ -130,7 +130,7 @@
                 if (event.key === 'Enter') {
                     // Prevent the default form submission
                     event.preventDefault();
-                    
+
                     // Call your search function
                     searchRepo();
                 }
