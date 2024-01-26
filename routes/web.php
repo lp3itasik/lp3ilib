@@ -41,12 +41,15 @@ Route::get('/', [BerandaController::class,'index'])->name('welcome.index');
 
 Route::resource('welcome', WelcomeController::class)->middleware(['auth']);
 
+Route::middleware(['auth', 'status:Aktif', 'role:A'])->group(function () {
+    Route::resource('type', TypeController::class);
+    Route::resource('desiderata', DesiderataController::class);
+    Route::resource('daftarapproverepo', DaftarapproverepoController::class);
+    Route::resource('inputrepo', InputrepoController::class);
+});
+
 Route::resource('service', ServiceController::class)->middleware(['auth']);
-Route::resource('desiderata', DesiderataController::class)->middleware(['auth']);
-Route::resource('inputrepo', InputrepoController::class)->middleware(['auth']);
 Route::resource('detailrepo', InputrepoController::class)->middleware(['auth']);
-Route::resource('type', TypeController::class)->middleware(['auth']);
-Route::resource('daftarapproverepo', DaftarapproverepoController::class)->middleware(['auth']);
 Route::resource('inputrepouser', InputrepouserController::class)->middleware(['auth']);
 Route::resource('daftar', DaftarController::class)->middleware(['auth']);
 Route::resource('searchrepo', SearchrepoController::class)->middleware(['auth']);
