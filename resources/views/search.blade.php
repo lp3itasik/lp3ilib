@@ -181,6 +181,9 @@
             </section>
         </div>
     </div>
+    <div class="w-full">
+        @include('components.footer')
+    </div>
     <script>
         const searchRepo = async () => {
             let search = document.getElementById('search').value;

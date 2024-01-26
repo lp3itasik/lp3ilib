@@ -106,4 +106,7 @@
         </div>
 
     </div>
+    <div class="w-full absolute bottom-0">
+        @include('components.footer')
+    </div>
 </x-landing-layout>

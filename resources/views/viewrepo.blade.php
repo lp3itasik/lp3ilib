@@ -159,4 +159,7 @@
                 </div>
         </section>
     </div>
+    <div class="w-full">
+        @include('components.footer')
+    </div>    
 </x-landing-layout>

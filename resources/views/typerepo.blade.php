@@ -85,6 +85,9 @@
                 </section>
             </div>
         </div>
+        <div class="w-full absolute bottom-0">
+            @include('components.footer')
+        </div>
     </x-landing-layout>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

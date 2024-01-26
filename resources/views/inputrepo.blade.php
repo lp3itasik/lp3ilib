@@ -281,6 +281,10 @@
             </section>
         </div>
     </div>
+    <div class="w-full">
+        @include('components.footer')
+    </div>
+    
     @push('scripts')
         <script>
             const uploadBerkas = async (event) => {
@@ -361,3 +365,4 @@
         </script>
     @endpush
 </x-landing-layout>
+

@@ -70,6 +70,10 @@
                 </div>
             </div>
     </section>
+    
+    <div class="w-full">
+        @include('components.footer')
+    </div>
     @push('scripts')
         <script>
             // Mendapatkan tanggal hari ini

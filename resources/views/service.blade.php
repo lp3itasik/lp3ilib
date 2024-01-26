@@ -167,6 +167,9 @@
             </div>
         </form>
     </div>
+    <div class="w-full">
+        @include('components.footer')
+    </div>
 </x-landing-layout>
 
 <script src="{{ asset('js/app.js') }}"></script>
