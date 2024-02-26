@@ -21,7 +21,7 @@
                                         <div class="flex">
                                             <h2 class="text-slate-400 text-dark font-normal md:mr-4 text-sm">
                                                 <i class="fa-solid fa-user"></i>
-                                                {{ $da->user->name }} [{{ $da->student }}]
+                                                {{ $da->student_name }} [{{ $da->student }}]
                                             </h2>
                                             <h2 class="text-slate-400 font-normal mr-6 max-w-md text-sm">
                                                 <i class="fa-solid fa-user-tie"></i>
@@ -51,7 +51,7 @@
             </div>
         </div>
     </div>
-    <div class="w-full absolute bottom-0">
+    <div class="w-full">
         @include('components.footer')
     </div>
 </x-landing-layout>

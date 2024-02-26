@@ -105,6 +105,11 @@
 
 <body>
     @include('components.navbar')
+    <div id="loading"
+        class="hidden top-0 bg-black w-full h-full min-h-screen bg-opacity-40 fixed z-40 flex justify-center items-center transition duration-150">
+        <lottie-player src="{{ asset('animation/loading.json') }}" background="transparent" speed="1"
+            style="width: 250px; height: 300px;" loop autoplay class="-ml-3 -mb-8"></lottie-player>
+    </div>
     <main>
         {{ $slot }}
     </main>
@@ -112,12 +117,21 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
+    <script src="{{ asset('js/lottie-player.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function() {
             $('.js-example-basic-single').select2();
         });
+        const showLoading = () => {
+            const loadingElement = document.getElementById('loading');
+            loadingElement.classList.remove('hidden');
+        }
+        const hideLoading = () => {
+            const loadingElement = document.getElementById('loading');
+            loadingElement.classList.add('hidden');
+        }
     </script>
     @stack('scripts')
     <script>
@@ -129,6 +143,15 @@
             } else {
                 content.classList.add('hidden');
             }
+            // Menutup dropdown jika diklik di luar dropdown
+            window.addEventListener('click', function(event) {
+                var buttonDigital = document.getElementById('buttonDigital');
+                var digitalNavbar = document.getElementById('digitalNavbar');
+
+                if (!buttonDigital.contains(event.target) && !digitalNavbar.contains(event.target)) {
+                    digitalNavbar.classList.add('hidden');
+                }
+            });
         }
 
         const dropdownMaster = () => {
@@ -139,6 +162,16 @@
             } else {
                 content.classList.add('hidden');
             }
+
+            // Menutup dropdown jika diklik di luar dropdown
+            window.addEventListener('click', function(event) {
+                var buttonMaster = document.getElementById('buttonMaster');
+                var masterNavbar = document.getElementById('masterNavbar');
+
+                if (!buttonMaster.contains(event.target) && !masterNavbar.contains(event.target)) {
+                    masterNavbar.classList.add('hidden');
+                }
+            });
         }
 
         const dropdownRepository = () => {
@@ -159,6 +192,15 @@
             } else {
                 content.classList.add('hidden');
             }
+            // Menutup dropdown jika diklik di luar dropdown
+            window.addEventListener('click', function(event) {
+                var buttonTentang = document.getElementById('buttonTentang');
+                var tentangNavbar = document.getElementById('tentangNavbar');
+
+                if (!buttonTentang.contains(event.target) && !tentangNavbar.contains(event.target)) {
+                    tentangNavbar.classList.add('hidden');
+                }
+            });
         }
 
         const hamburgerMenu = () => {

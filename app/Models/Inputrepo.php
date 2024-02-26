@@ -14,13 +14,12 @@ class Inputrepo extends Model
         'title',
         'type_id',
         'major',
-        // 'officer',
+        'officer',
         'lecturer',
         'student',
+        'student_name',
         'abstract',
-        'subject',
-        'key_word',
-        // 'is_approve',
+        'is_approve',
     ];
 
     protected $table = 'repositories';

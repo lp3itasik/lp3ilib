@@ -2,20 +2,20 @@
     <div class="bg-[#ECAE30] w-full py-2 -mt-16">
     </div>
     <div class="px-4">
-        <div class="flex flex-row px-4 items-center justify-center mb-8 mt-6">
-            <img src="{{ asset('img/logolp3i.png') }}" alt="logo lp3i" width="200px" class="mx-4 mb-5">
-            <img src="{{ asset('img/taglinelp3i.png') }}" alt="tagline lp3i" width="160px" class="mx-4">
+        <div class="flex flex-row px-4 items-center justify-center mb-8 mt-6 mx-10">
+            <img src="{{ asset('img/logolp3i.png') }}" alt="logo lp3i" width="160px" class="mx-4 mb-5">
+            <img src="{{ asset('img/taglinelp3i.png') }}" alt="tagline lp3i" width="120px" class="mx-4">
         </div>
 
         <div>
-            <p class="text-white text-center text-md">Jl. Ir. H. Juanda No.KM. 2, RW.No. 106, Panglayungan, Kec.
-                Cipedes, Kab. Tasikmalaya, Jawa Barat 46151</p>
+            <p class="text-white text-center text-md text-wrap">Jl. Ir. H. Juanda No. 106 KM. 2, Kel. Panglayungan, Kec.
+                Cipedes, Kota Tasikmalaya, Jawa Barat 46151</p>
         </div>
     </div>
 
     <div class="flex flex-wrap">
         <div class="w-full pt-5">
-            <div class="flex flex-wrap items-center justify-center mb-5">
+            <div class="flex flex-wrap items-center justify-center">
 
                 <!-- Tiktok Simple Icon -->
                 <a href="https://www.tiktok.com/@lp3i.tasik" target="_blank"

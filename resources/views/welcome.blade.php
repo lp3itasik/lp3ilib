@@ -1,5 +1,6 @@
 <x-landing-layout>
-    <section class="mx-auto max-w-screen bg-center bg-no-repeat bg-[url('/img/gedung.png')] bg-gray-800 bg-cover bg-blend-multiply">
+    <section
+        class="mx-auto max-w-screen bg-center bg-no-repeat bg-[url('/img/gedung.png')] bg-gray-800 bg-cover bg-blend-multiply">
         <div class="py-12">
             <div class="text-center items-center flex flex-col justify-center ">
                 <p class="font-bold text-white text-xl md:text-2xl mb-5">PERPUSTAKAAN DIGITAL</p>
@@ -16,9 +17,9 @@
                 </div>
 
             </div>
-            <div class="mx-20">
+            <div class="mx-4 md:mx-20">
                 <label for="default-search"
-                    class="mb-2 mx-10 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                    class="mb-2 mx-10 text-sm font-medium text-gray-900 sr-only">Search</label>
                 <div class="relative">
                     <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                         <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
@@ -29,18 +30,18 @@
                     </div>
                     <input type="search" id="search" name="search"
                         class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-secondary focus:border-primary"
-                        placeholder="" onkeypress="handleKeyPress(event)" required>
+                        onkeypress="handleKeyPress(event)" placeholder="Cari Repository Di sini ....." required>
                     <button type="button" onclick="searchRepo()"
                         class="text-slate-900 absolute end-2.5 bottom-2.5 bg-white hover:bg-slate-200 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2">
                         Cari</button>
                 </div>
             </div>
             <div class="w-full px-4 pt-5 mb-16">
-                <div class="flex flex-wrap text-center text-white  items-center justify-center">
-                    <p class="mr-8">Tugas Akhir: {{ $tugas_akhir ? count($tugas_akhir) : 0 }}</p>
-                    <p class="mr-8">Laporan KKN: {{ $kkn ? $kkn->count() : 0 }}</p>
-                    <p class="mr-8">Laporan KKI: {{ $kki ? $kki->count() : 0 }}</p>
-                    <p>Laporan PKM: {{ $pkm ? $pkm->count() : 0 }}</p>
+                <div class="flex flex-wrap gap-6 text-center mx-auto text-white items-center justify-center">
+                    <p>Tugas Akhir: {{ $tugas_akhir->count() }}</p>
+                    <p>Laporan KKN: {{ $kkn->count() }}</p>
+                    <p>Laporan KKI: {{ $kki->count() }}</p>
+                    <p>Laporan PKM: {{ $pkm->count() }}</p>
                 </div>
             </div>
 

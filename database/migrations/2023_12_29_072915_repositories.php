@@ -22,8 +22,7 @@ class Repositories extends Migration
             $table->string('officer');
             $table->string('lecturer');
             $table->string('student');
-            $table->text('subject');
-            $table->text('key_word');
+            $table->string('student_name');
             $table->text('abstract');
             $table->boolean('is_approve');
             $table->timestamps();

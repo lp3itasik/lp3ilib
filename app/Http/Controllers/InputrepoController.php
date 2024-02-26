@@ -57,6 +57,7 @@ class InputrepoController extends Controller
             'key_word' => $request->input('key_word'),
             'lecturer' => $request->input('lecturer'),
             'student' => $request->input('student'),
+            'student_name' => $request->input('student_name'),
         ];
         $detrepo=[
             'series' => date('Ymdhis'),

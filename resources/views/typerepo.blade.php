@@ -1,11 +1,12 @@
     <x-landing-layout>
-        <div class="container mx-auto mt-14">
+        <div class="container mx-auto my-8">
             <div>
                 <div class="px-4 text-center items-center">
-                    <p class="font-bold text-black text-xl md:text-2xl mb-5">Type Repository</p>
+                    <p class="font-bold text-black text-xl md:text-2xl mb-8">Type Repository</p>
                 </div>
-                <section id="inputrepo" class="px-4 mb-32">
+                <section id="inputrepo" class="px-4">
                     <div class="container md:flex md:flex-row gap-6 mx-auto">
+
                         <div class="w-full md:w-1/2 mx-auto px-6 py-6 mb-10 shadow-lg bg-white rounded-2xl border">
                             <form action="{{ route('types.store') }}" method="post">
                                 @csrf
@@ -14,18 +15,27 @@
                                 </div>
                                 <div class="mb-6">
                                     <label for="name"
-                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Type</label>
+                                        class="block mb-2 text-sm font-medium text-gray-900">Type</label>
                                     <input type="text" name="name"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                         placeholder="Masukan Type..." required>
                                     <span class="text-sm m-l text-red-500">{{ $errors->first('name') }}</span>
                                 </div>
-                                <div>
-                                    <button href="#" type="submit"
-                                        class="text-white mx-auto shadow-lg bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-6 py-3 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Simpan
-                                        <i class="fa-solid fa-floppy-disk ml-3"></i>
-                                    </button>
+                                <div class="mb-6">
+                                    <label for="text"
+                                        class="block mb-2 text-sm font-medium text-gray-900">Klasifikasi</label>
+                                    <select name="type" data-placeholder="Pilih Klasifikasi"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                        data-allow-clear="false">
+                                        <option value="">Pilih Klasifikasi...</option>
+                                        <option value="L">Laporan</option>
+                                        <option value="E">Ebook</option>
+                                    </select>
                                 </div>
+                                <button href="#" type="submit"
+                                    class="text-white mx-auto shadow-lg bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-6 py-3 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Simpan
+                                    <i class="fa-solid fa-floppy-disk ml-3"></i>
+                                </button>
 
                             </form>
                         </div>
@@ -65,7 +75,7 @@
                                                     class="block mb-2 text-sm font-medium text-gray-900">Type</label>
                                                 <input type="text" id="name" name="name"
                                                     class="px-3 py-2 border shadow rounded w-full block text-sm placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 invalid:text-pink-700 invalid:focus:ring-pink-700 invalid:focus:border-pink-700 peer hover:shadow-lg"
-                                                    id="" placeholder="Masukan Type...">
+                                                    id="" placeholder="Masukan Tipe...">
                                             </div>
                                         </div>
                                         <div class="flex items-center p-4 space-x-2 border-t border-gray-200 rounded-b">
@@ -79,13 +89,11 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                 </section>
             </div>
         </div>
-        <div class="w-full absolute bottom-0">
+        <div class="w-full">
             @include('components.footer')
         </div>
     </x-landing-layout>

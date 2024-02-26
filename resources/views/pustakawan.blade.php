@@ -1,8 +1,8 @@
     <x-landing-layout>
-        <div class="container mx-auto mt-20 mb-20">
+        <div class="container mx-auto my-20 md:my-10">
             <div class="flex flex-col items-center justify-center">
                 <div
-                    class=" w-60 h-60 mt-16 border-2 border-[#ECAE30] rounded-full shadow-lg mx-auto transition-all duration-300 cursor-pointer hover:rotate-6 hover:scale-105 hover:border-white">
+                    class=" w-60 h-60 border-2 border-white rounded-full shadow-lg mx-auto transition-all duration-300 cursor-pointer hover:rotate-6 hover:scale-105 hover:border-primary">
                     <img src="{{ asset('img/nindi.jpeg') }}" alt="" class="rounded-full w-60 h-60">
                 </div>
 
@@ -12,7 +12,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-full absolute bottom-0">
+        <div class="w-full bottom-0">
             @include('components.footer')
         </div>
     </x-landing-layout>

@@ -1,6 +1,6 @@
 <x-landing-layout>
     
-    <div class="container mx-auto mt-8 mb-20">
+    <div class="container mx-auto mt-6 mb-10">
         <div>
             <div class="px-4 pt-8 text-center items-center md:pt-6">
                 <p class="font-bold text-black text-2xl md:text-2xl mb-5">Jam Pelayanan</p>
@@ -109,7 +109,7 @@
             </div>
         </div>
     </div>
-    <div class="w-full absolute bottom-0">
+    <div class="w-full">
         @include('components.footer')
     </div>
 </x-landing-layout>

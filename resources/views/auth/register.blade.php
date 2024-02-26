@@ -26,13 +26,6 @@
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
 
-            <!-- Role -->
-            <div>
-                <x-label for="role" :value="__('Role')" />
-
-                <x-input id="role" class="block mt-1 w-full" type="text" name="role" :value="old('role')" required autofocus />
-            </div>
-
             <!-- Email Address -->
             <div class="mt-4">
                 <x-label for="email" :value="__('Email')" />
@@ -57,13 +50,6 @@
                 <x-input id="password_confirmation" class="block mt-1 w-full"
                                 type="password"
                                 name="password_confirmation" required />
-            </div>
-
-            <!-- Status -->
-            <div>
-                <x-label for="status" :value="__('Status')" />
-
-                <x-input id="status" class="block mt-1 w-full" type="text" name="status" :value="old('status')" required autofocus />
             </div>
 
             <div class="flex items-center justify-end mt-4">

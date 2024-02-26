@@ -4,18 +4,18 @@
             <div class="px-4 text-center items-center">
                 <p class="font-bold text-black text-xl md:text-2xl mb-5">Upload Repository</p>
             </div>
-            <section id="inputrepo" class="px-4 mb-32">
+            <section id="inputrepo" class="px-4">
                 <div class="container mx-auto">
                     <div class="w-full mx-auto px-6 py-6 mb-10 shadow-lg bg-white rounded-2xl border">
                         {{-- <form action="{{ route('inputrepo.store') }}" method="post"> --}}
-                        <form onsubmit="uploadBerkas(event)" action="javascript:void(0)" enctype="multipart/form-data"
-                            method="POST">
+                        <form onsubmit="uploadBerkas(event)" id="uploadForm" action="javascript:void(0)"
+                            enctype="multipart/form-data" method="POST">
                             {{-- @csrf --}}
                             <div class="grid gap-6 mb-6 md:grid-cols-3">
                                 <div>
-                                    <label for="name"
+                                    <label for="student_name"
                                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama</label>
-                                    <input type="text" id="name" name="name"
+                                    <input type="text" id="student_name" name="student_name"
                                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         placeholder="Isi dengan nama lengkap...">
                                 </div>
@@ -36,6 +36,8 @@
                                         <option value="Manajemen Keuangan Perbankan">Manajemen Keuangan Perbankan
                                         </option>
                                         <option value="Manajemen Pemasaran">Manajemen Pemasaran</option>
+                                        <option value="Manajemen Informatika">Manajemen Informatika</option>
+                                        <option value="Administrasi Bisnis">Administrasi Bisnis</option>
                                     </select>
                                 </div>
                             </div>
@@ -72,21 +74,6 @@
                                         @endforeach
                                     </select>
                                 </div>
-                            </div>
-                            <div class="mb-6">
-                                <label for="subject"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Subject</label>
-                                <input type="text" id="subject" name="subject"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="Isi dengan subject...">
-                            </div>
-                            <div class="mb-6">
-                                <label for="key_word"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kata
-                                    Kunci</label>
-                                <input type="text" id="key_word" name="key_word"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="Isi dengan kata kunci...">
                             </div>
                             <div class="mb-6">
                                 <div
@@ -231,7 +218,7 @@
                                     <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                         for="file_input">Upload file</label>
                                     <input
-                                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                        class="block w-full text-sm p-2 text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                         aria-describedby="file_input_help" id="files" name="files"
                                         type="file">
                                     <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PDF
@@ -241,7 +228,7 @@
                                     <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                         for="file_input">Upload file</label>
                                     <input
-                                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                        class="block w-full text-sm p-2 text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                         aria-describedby="file_input_help" id="file_input" type="file">
                                     <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PDF
                                         (MAX. 10Mb).</p>
@@ -253,7 +240,7 @@
                                     <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                         for="file_input">Upload file</label>
                                     <input
-                                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                        class="block w-full text-sm p-2 text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                         aria-describedby="file_input_help" id="file_input" type="file">
                                     <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PDF
                                         (MAX. 10Mb).</p>
@@ -262,14 +249,14 @@
                                     <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                         for="file_input">Upload file</label>
                                     <input
-                                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                        class="block w-full text-sm p-2 text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                         aria-describedby="file_input_help" id="file_input" type="file">
                                     <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PDF
                                         (MAX. 10Mb).</p>
                                 </div>
                             </div>
                             <div class="flex flex-row justify-center">
-                                <button type="submit"
+                                <button type="submit" onclick="uploadFile()"
                                     class="text-white mx-auto shadow-lg bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-16 py-3 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Upload
                                     <i class="fa-solid fa-upload ml-5"></i>
                                 </button>
@@ -284,20 +271,20 @@
     <div class="w-full">
         @include('components.footer')
     </div>
-    
+
     @push('scripts')
         <script>
             const uploadBerkas = async (event) => {
                 event.preventDefault();
+                showLoading();
                 let timestamp = new Date();
                 let identity = document.getElementById('identity').value;
                 let type = document.getElementById('type').value;
                 let title = document.getElementById('title').value;
                 let major = document.getElementById('major').value;
                 let abstract = document.getElementById('abstrak').value;
-                let subject = document.getElementById('subject').value;
-                let key_word = document.getElementById('key_word').value;
                 let lecturer = document.getElementById('lecturer').value;
+                let student_name = document.getElementById('student_name').value;
                 let series =
                     `${timestamp.getFullYear()}${timestamp.getMonth()}${timestamp.getDate()}${timestamp.getHours()}${timestamp.getMinutes()}`;
                 let file = document.getElementById('files');
@@ -315,9 +302,8 @@
                             title: title,
                             major: major,
                             abstract: abstract,
-                            subject: subject,
-                            key_word: key_word,
                             lecturer: lecturer,
+                            student_name: student_name,
                             student: identity,
                             type: type,
                         }
@@ -329,7 +315,6 @@
                                 // Any other headers you may need
                             }
                         });
-
 
                         try {
                             if (responseDatabase.data.detail_repo.id) {
@@ -343,11 +328,11 @@
                                         file: event.target.result.split(';base64,').pop(),
                                     };
 
-                                    console.log(repository);
                                     const responseUpload = await axios.post(
                                         `https://opac.politekniklp3i-tasikmalaya.ac.id:8444/upload`,
                                         repository);
                                     alert(responseUpload.data.message);
+                                    hideLoading();
                                     location.reload();
                                 }
                             }
@@ -362,7 +347,22 @@
                     }
                 }
             };
+
+            // Loading File
+            // function uploadFile() {
+            //     const fileInput = document.getElementById('fileInput');
+            //     const uploadForm = document.getElementById('uploadForm');
+            //     const loadingDiv = document.getElementById('loading');
+
+            //     // Simulasi waktu upload (Anda bisa mengganti ini dengan logika upload sesungguhnya)
+            //     loadingDiv.classList.remove('hidden');
+            //     setTimeout(() => {
+            //         // Logika selesai upload
+            //         loadingDiv.classList.add('hidden');
+            //         uploadForm.reset();
+            //         alert('File uploaded success!');
+            //     }, 6000); // Ganti angka 2000 dengan waktu upload yang sesuai
+            // }
         </script>
     @endpush
 </x-landing-layout>
-

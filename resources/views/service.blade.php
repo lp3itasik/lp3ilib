@@ -1,8 +1,8 @@
 <x-landing-layout>
     <div class="container mx-auto justify-center md:ml-auto mb-20">
         <div class="px-4 pt-16 text-center items-center md:pt-10">
-            <p class="font-bold text-black text-2xl md:text-2xl mb-4">PEMINJAMAN</p>
-            <p class="mb-1 text-black text-lg font-bold text-center">Perpustakaan Politeknik LP3I Kampus Tasikmalaya
+            <p class="font-bold text-black text-2xl md:text-2xl mb-4">PELAYANAN</p>
+            <p class="mb-1 text-black text-lg text-wrap font-bold text-center">Perpustakaan Politeknik LP3I Kampus Tasikmalaya
                 memiliki:</p>
             <div class="w-full px-4 pt-5 mb-8">
                 <div class="md:flex flex-wrap text-center text-black font-light items-center justify-center">

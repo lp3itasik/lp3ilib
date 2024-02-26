@@ -19,6 +19,7 @@ class SearchrepoController extends Controller
         return view('search')->with([
             'repositories' => $repositories
         ]);
+        // return response()->json($repositories);
 
         // redirectnya nanti ke search.blade.php cuma menampilkan sesuai dengan yang dicari
     }

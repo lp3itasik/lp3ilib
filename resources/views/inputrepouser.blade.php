@@ -1,15 +1,15 @@
 <x-landing-layout>
-    <div class="container mx-auto mt-14">
+    <div class="container mx-auto mt-8">
         <div>
             <div class="px-4 text-center items-center">
-                <p class="font-bold text-black text-xl md:text-2xl mb-5">Upload Repository</p>
+                <p class="font-bold text-black text-xl md:text-2xl mb-8">Upload Repository</p>
             </div>
-            <section id="inputrepo" class="px-4 mb-32">
+            <section id="inputrepo" class="px-4">
                 <div class="container mx-auto">
                     <div class="w-full mx-auto px-6 py-6 mb-10 shadow-lg bg-white rounded-2xl border">
                         {{-- <form action="{{ route('inputrepo.store') }}" method="post"> --}}
-                        <form onsubmit="uploadBerkas(event)" action="javascript:void(0)" enctype="multipart/form-data"
-                            method="POST">
+                        <form onsubmit="uploadBerkas(event)" id="uploadForm" action="javascript:void(0)"
+                            enctype="multipart/form-data" method="POST">
                             {{-- @csrf --}}
                             <div class="grid gap-6 mb-6 md:grid-cols-3">
                                 <div>
@@ -270,7 +270,7 @@
                                 </div>
                             </div>
                             <div class="flex flex-row justify-center">
-                                <button type="submit"
+                                <button type="submit" onclick="uploadFile()"
                                     class="text-white mx-auto shadow-lg bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-16 py-3 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Upload
                                     <i class="fa-solid fa-upload ml-5"></i>
                                 </button>
@@ -285,87 +285,99 @@
     <div class="w-full">
         @include('components.footer')
     </div>
-    
-</x-landing-layout>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    @push('scripts')
+        <script>
+            const uploadBerkas = async (event) => {
+                event.preventDefault();
+                let timestamp = new Date();
+                let identity = document.getElementById('identity').value;
+                let type = document.getElementById('type').value;
+                let title = document.getElementById('title').value;
+                let major = document.getElementById('major').value;
+                let abstract = document.getElementById('abstrak').value;
+                let subject = document.getElementById('subject').value;
+                let key_word = document.getElementById('key_word').value;
+                let lecturer = document.getElementById('lecturer').value;
+                let series =
+                    `${timestamp.getFullYear()}${timestamp.getMonth()}${timestamp.getDate()}${timestamp.getHours()}${timestamp.getMinutes()}`;
+                let file = document.getElementById('files');
 
-<script>
-    const uploadBerkas = async (event) => {
-        event.preventDefault();
-        let timestamp = new Date();
-        let identity = document.getElementById('identity').value;
-        let type = document.getElementById('type').value;
-        let title = document.getElementById('title').value;
-        let major = document.getElementById('major').value;
-        let abstract = document.getElementById('abstrak').value;
-        let subject = document.getElementById('subject').value;
-        let key_word = document.getElementById('key_word').value;
-        let lecturer = document.getElementById('lecturer').value;
-        let series =
-            `${timestamp.getFullYear()}${timestamp.getMonth()}${timestamp.getDate()}${timestamp.getHours()}${timestamp.getMinutes()}`;
-        let file = document.getElementById('files');
+                if (file.files.length > 0) {
+                    let konfirmasi = confirm(`Apakah anda yakin akan mengunggah berkas ${file.files[0].name}`);
+                    if (konfirmasi) {
 
-        if (file.files.length > 0) {
-            let konfirmasi = confirm(`Apakah anda yakin akan mengunggah berkas ${file.files[0].name}`);
-            if (konfirmasi) {
-
-                const berkas = file.files[0];
-                const reader = new FileReader();
-                let data = {
-                    series: series,
-                    file_name: `${identity}-${type}-${series}`,
-                    typefile: `.${berkas.name.split('.').pop()}`,
-                    title: title,
-                    major: major,
-                    abstract: abstract,
-                    subject: subject,
-                    key_word: key_word,
-                    lecturer: lecturer,
-                    student: identity,
-                    type: type,
-                }
-
-                const responseDatabase = await axios.post(`/detailrepo`, data, {
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
-                        'Content-Type': 'application/json', // Make sure to set the content type
-                        // Any other headers you may need
-                    }
-                });
-
-
-                try {
-                    if (responseDatabase.data.detail_repo.id) {
-                        reader.onload = async (event) => {
-                            let repository = {
-                                identity: identity,
-                                type: type,
-                                series: series,
-                                id: responseDatabase.data.detail_repo.id,
-                                typefile: berkas.name.split('.').pop(),
-                                file: event.target.result.split(';base64,').pop(),
-                            };
-
-                            console.log(repository);
-                            const responseUpload = await axios.post(
-                                `https://opac.politekniklp3i-tasikmalaya.ac.id:8444/upload`,
-                                repository);
-                            alert(responseUpload.data.message);
-                            location.reload();
+                        const berkas = file.files[0];
+                        const reader = new FileReader();
+                        let data = {
+                            series: series,
+                            file_name: `${identity}-${type}-${series}`,
+                            typefile: `.${berkas.name.split('.').pop()}`,
+                            title: title,
+                            major: major,
+                            abstract: abstract,
+                            subject: subject,
+                            key_word: key_word,
+                            lecturer: lecturer,
+                            student: identity,
+                            type: type,
                         }
+
+                        const responseDatabase = await axios.post(`/detailrepo`, data, {
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                                'Content-Type': 'application/json', // Make sure to set the content type
+                                // Any other headers you may need
+                            }
+                        });
+
+
+                        try {
+                            if (responseDatabase.data.detail_repo.id) {
+                                reader.onload = async (event) => {
+                                    let repository = {
+                                        identity: identity,
+                                        type: type,
+                                        series: series,
+                                        id: responseDatabase.data.detail_repo.id,
+                                        typefile: berkas.name.split('.').pop(),
+                                        file: event.target.result.split(';base64,').pop(),
+                                    };
+
+                                    console.log(repository);
+                                    const responseUpload = await axios.post(
+                                        `https://opac.politekniklp3i-tasikmalaya.ac.id:8444/upload`,
+                                        repository);
+                                    alert(responseUpload.data.message);
+                                    location.reload();
+                                }
+                            }
+
+                            reader.readAsDataURL(berkas);
+                        } catch (error) {
+
+                            alert('MOHON MAAF SERVER SEDANG TIDAK TERSEDIA');
+                            console.log(error);
+                        }
+
                     }
-
-                    reader.readAsDataURL(berkas);
-                } catch (error) {
-
-                    alert('MOHON MAAF SERVER SEDANG TIDAK TERSEDIA');
-                    console.log(error);
                 }
+            };
 
-            }
-        }
-    };
-</script>
+            // Loading File
+            // function uploadFile() {
+            //         const fileInput = document.getElementById('fileInput');
+            //         const uploadForm = document.getElementById('uploadForm');
+            //         const loadingDiv = document.getElementById('loading');
 
+            //         // Simulasi waktu upload (Anda bisa mengganti ini dengan logika upload sesungguhnya)
+            //         loadingDiv.classList.remove('hidden');
+            //         setTimeout(() => {
+            //             // Logika selesai upload
+            //             loadingDiv.classList.add('hidden');
+            //             uploadForm.reset();
+            //             alert('File uploaded success!');
+            //         }, 6000); // Ganti angka 2000 dengan waktu upload yang sesuai
+            //     }
+        </script>
+    @endpush
+</x-landing-layout>

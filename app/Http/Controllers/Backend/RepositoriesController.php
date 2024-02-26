@@ -118,6 +118,9 @@ class RepositoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $repo = Repositories::findOrFail($id);
+        $repo->delete();
+        return back()->with('message_delete','Data Repositori Sudah dihapus');
+        // return response()->json($id);
     }
 }

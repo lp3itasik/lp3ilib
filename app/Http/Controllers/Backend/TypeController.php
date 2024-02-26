@@ -43,13 +43,17 @@ class TypeController extends Controller
     {
         $request->validate([
             'name' => ['required'],
+            'type' => ['required']
         ], [
-            'name.required' => 'Kolom Type tidak boleh kosong.',
+            'name.required' => 'Kolom nama tidak boleh kosong.',
+            'type.required' => 'Kolom tipe tidak boleh kosong.',
         ]);
 
         $data=[
             'name' => $request->input('name'),
+            'type' => $request->input('type'),
         ];
+        // dd($data);
         Type::create($data);
         return back()->with('message','Data Type Sudah ditambahkan');
     }

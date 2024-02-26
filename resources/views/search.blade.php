@@ -23,11 +23,11 @@
                         Cari</button>
                 </div>
             </form>
-            <section id="about" class="mt-16 mb-32">
+            <section id="about" class="mt-16 mb-6">
                 <div class="container mx-auto px-4">
                     <div class="flex flex-wrap">
-                        <div class="w-full lg:w-2/3 px-4 ">
-                            <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-8">
+                        <div class="w-full lg:w-2/3 px-4">
+                            <div class="relative shadow-md sm:rounded-lg mb-8">
                                 <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                     <thead
                                         class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -49,11 +49,15 @@
                                                         <h2
                                                             class="text-slate-400 text-dark font-normal md:mr-4 text-sm">
                                                             <i class="fa-solid fa-user"></i>
-                                                            {{ $r->user->name }} [{{ $r->student }}]
+                                                            {{ $r->student_name }} [{{ $r->student }}]
                                                         </h2>
                                                         <h2 class="text-slate-400 font-normal mr-6 max-w-md text-sm">
                                                             <i class="fa-solid fa-user-tie"></i>
-                                                            {{ $r->userlec->name }}
+                                                            @if ($r->userlec)
+                                                                {{ $r->userlec->name }}
+                                                            @else
+                                                                Tidak Diketahui
+                                                            @endif
                                                         </h2>
                                                         <h2 class="text-red-600 font-bold max-w-md text-sm">
                                                             {{ date('Y', strtotime($r->created_at)) }}
@@ -69,7 +73,12 @@
                                                 </td>
                                             </tr>
                                         @empty
-                                            <p class="font-bold p-5">Data Tidak Ditemukan ....</p>
+                                            {{-- <p class="font-bold p-5">Data Tidak Ditemukan....</p> --}}
+                                            <div class="flex flex-row justify-center">
+                                                <lottie-player src="{{ asset('animation/empty.json') }}"
+                                                    background="transparent" speed="1"
+                                                    style="width: 300px; height: 350px;" loop autoplay></lottie-player>
+                                            </div>
                                         @endforelse
                                     </tbody>
                                 </table>
@@ -119,21 +128,21 @@
                                 Jenis Koleksi
                             </h3>
                             <div class="container max-w-lg lg:w-1/3 mx-auto flex flex-col justify-center items-center">
-                                <a href="{{ route('searchrepo.edit', '6') }}"
+                                <a href="{{ route('searchrepo.edit', '3') }}"
                                     class="w-64 text-white flex text-md justify-center items-center bg-red-400 rounded-lg px-1 py-3 shadow-lg  mb-3">
                                     <i class="fa-solid fa-file-lines"></i>
                                     <p class="ml-3">
                                         Tugas Akhir
                                     </p>
                                 </a>
-                                <a href="{{ route('searchrepo.edit', '7') }}"
+                                <a href="{{ route('searchrepo.edit', '2') }}"
                                     class="w-64 text-white flex text-md justify-center items-center bg-red-400 rounded-lg px-1 py-3 shadow-lg  mb-3">
                                     <i class="fa-solid fa-file-lines"></i>
                                     <p class="ml-3">
                                         Laporan KKN
                                     </p>
                                 </a>
-                                <a href="{{ route('searchrepo.edit', '8') }}"
+                                <a href="{{ route('searchrepo.edit', '1') }}"
                                     class="w-64 text-white flex text-md justify-center items-center bg-red-400 rounded-lg px-1 py-3 shadow-lg mb-3">
                                     <i class="fa-solid fa-file-lines"></i>
                                     <p class="ml-3">
@@ -151,14 +160,14 @@
                                 <h3 class="font-semibold text-black text-xl mb-4">
                                     Program Studi
                                 </h3>
-                                <div class="">
+                                <div>
                                     <div
-                                        class="w-64 text-white text-lg flex flex-col text-center justify-center items-center bg-white rounded-lg px-1 py-3 shadow-lg  mb-3">
+                                        class="w-64 text-white text-lg flex flex-col text-center justify-center items-center bg-white rounded-lg px-1 py-3 shadow-lg mb-3">
                                         <div
-                                            class="bg-primary h-[252px] w-[230px] rounded-lg shadow-md relative mx-auto mb-5">
-                                            <img src="{{ asset('img/Rounded.png') }}" alt="" class="ml-10">
+                                            class="flex flex-row justify-center bg-primary h-[252px] w-[230px] rounded-lg shadow-md relative mx-auto mb-5">
+                                            <img src="{{ asset('img/rounded.png') }}" alt="" class="ml-10">
                                             <div
-                                                class="absolute text-xl top-24 z-10 text-center font-semibold  justify-center">
+                                                class="absolute text-xl text-wrap top-24 z-10 font-semibold text-center items-center justify-center">
                                                 Manajemen Pemasaran
                                             </div>
                                         </div>
@@ -168,7 +177,7 @@
                                             <img src="{{ asset('img/Rounded2.png') }}" alt=""
                                                 class="ml-[60px]">
                                             <div
-                                                class="absolute text-xl top-24 z-10 text-black font-semibold text-center items-center justify-center">
+                                                class="absolute text-xl text-wrap top-24 z-10 text-black font-semibold text-center items-center justify-center">
                                                 Manajemen Keuangan Perbankan
                                             </div>
                                         </div>
@@ -196,10 +205,23 @@
             if (event.key === 'Enter') {
                 // Prevent the default form submission
                 event.preventDefault();
-                
+
                 // Call your search function
                 searchRepo();
             }
         }
+
+
+        const getParams = () => {
+            const urlParams = new URLSearchParams(window.location.search);
+
+        const searchValue = urlParams.get('search');
+
+        console.log('Nilai dari parameter search:', searchValue);
+        document.getElementById('search').value = searchValue;
+        }
+        getParams();
     </script>
 </x-landing-layout>
+
+<script src="{{ asset('js/lottie-player.js') }}"></script>
